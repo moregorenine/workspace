@@ -1,6 +1,7 @@
 @import url(font-awesome.min.css);
-/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700"); */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700"); */
+/* @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); */
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -46,6 +47,7 @@
 
 	body {
 		font-family: "Nanum Gothic", sans-serif;
+		/* font-family: 'Nanum Pen Script', serif; */
 		-webkit-text-size-adjust: none;
 	}
 

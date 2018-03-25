@@ -17,8 +17,8 @@
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/assets-editorial/**" location="/WEB-INF/views/html5up-editorial/assets/" />
-	<resources mapping="/images-editorial/**" location="/WEB-INF/views/html5up-editorial/images/" />
+	<resources mapping="/assets-editorial/**" location="/WEB-INF/views/html5up/editorial/assets/" />
+	<resources mapping="/images-editorial/**" location="/WEB-INF/views/html5up/editorial/images/" />
 
 	<context:component-scan base-package="me.w4springrain.home" />
 
