@@ -15,17 +15,17 @@
 	</definition>
 
 	<definition name="*" extends="html5up-editorial">
-		<put-attribute name="title" value="wait 4 spring rain" />
+		<put-attribute name="title" value="Wait For Spring Rain" />
 		<!-- <put-attribute name="section" value="/WEB-INF/views/{1}.jsp" /> -->
 	</definition>
 	
 	<definition name="*/*" extends="html5up-editorial">
-		<put-attribute name="title" value="wait 4 spring rain" />
+		<put-attribute name="title" value="Wait For Spring Rain" />
 		<!-- <put-attribute name="section" value="/WEB-INF/views/{1}/{2}.jsp" /> -->
 	</definition>
 	
 	<definition name="*/*/*" extends="html5up-editorial">
-		<put-attribute name="title" value="wait 4 spring rain" />
+		<put-attribute name="title" value="Wait For Spring Rain" />
 		<!-- <put-attribute name="section" value="/WEB-INF/views/{1}/{2}/{3}.jsp" /> -->
 	</definition>
 	
