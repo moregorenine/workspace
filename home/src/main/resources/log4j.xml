@@ -12,7 +12,8 @@
 	
 	<!-- Application Loggers -->
 	<logger name="me.w4springrain.home">
-		<level value="info" />
+		<!-- <level value="info" /> -->
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
