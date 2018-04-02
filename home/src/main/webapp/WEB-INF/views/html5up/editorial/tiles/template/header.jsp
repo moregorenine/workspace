@@ -1,6 +1,6 @@
-<script src="Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 <script src="views/html5up/editorial/tiles/template/header.js"></script>
-<link type="text/css" rel="stylesheet" href="Magnific-Popup/dist/magnific-popup.css" />
+<link type="text/css" rel="stylesheet" href="magnific-Popup/dist/magnific-popup.css" />
 
 <header id="header">
 	<a href="index.html" class="logo"><strong>Wait For Spring
