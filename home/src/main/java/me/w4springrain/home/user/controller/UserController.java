@@ -18,6 +18,7 @@ import me.w4springrain.home.user.service.UserService;
 import me.w4springrain.home.user.vo.User;
 
 @Controller
+//@SessionAttributes("user")
 @RequestMapping(value = "/users")
 public class UserController {
 
@@ -36,7 +37,7 @@ public class UserController {
 	public String selectUsers(Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
-		return "user/users";
+		return "user/users.jsp";
 	}
 	
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)
