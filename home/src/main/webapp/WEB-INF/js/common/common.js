@@ -41,20 +41,19 @@ function doAjax(doAjax_params) {
 			}
 		},
 		success : function(data, textStatus, jqXHR) {
-			debugger;
 			if (typeof successCallbackFunction === "function") {
 				successCallbackFunction(data);
 			}
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
-			debugger;
 			if (typeof errorCallBackFunction === "function") {
 				errorCallBackFunction(errorThrown);
+			} else {
+				alert("ajax error!");
 			}
 
 		},
 		complete : function(jqXHR, textStatus) {
-			debugger;
 			if (typeof completeCallbackFunction === "function") {
 				completeCallbackFunction();
 			}

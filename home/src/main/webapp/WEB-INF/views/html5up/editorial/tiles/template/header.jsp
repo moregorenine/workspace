@@ -1,6 +1,8 @@
 <script src="magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 <script src="views/html5up/editorial/tiles/template/header.js"></script>
-<link type="text/css" rel="stylesheet" href="magnific-Popup/dist/magnific-popup.css" />
+<script src="views/user/signup.js"></script>
+<link type="text/css" rel="stylesheet"
+	href="magnific-Popup/dist/magnific-popup.css" />
 
 <header id="header">
 	<a href="index.html" class="logo"><strong>Wait For Spring
@@ -12,6 +14,7 @@
 				class="label">Snapchat</span></a></li>
 		<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 		<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-		<li><a class="simple-ajax-popup" href="views/html5up/editorial/tiles/template/sign-up.html"><span class="label">sign up</span></a></li>
+		<li><a class="popup-with-form" href="#formSignup"><span class="label">sign up</span></a></li>
 	</ul>
 </header>
+<form id="formSignup" class="mfp-hide white-popup-block"></form>

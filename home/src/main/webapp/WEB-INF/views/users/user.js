@@ -6,7 +6,7 @@ $('#btnRegUser').click(function() {
 	data.email = "test4";
 	var params = $.extend({}, doAjax_params_default);
 	params['url'] = "/user/create";
-	params['requestType'] = POST;
+	params['requestType'] = "POST";
 	params['data'] = data;
 	params['successCallbackFunction'] = cbSignUp;
 	doAjax(params);

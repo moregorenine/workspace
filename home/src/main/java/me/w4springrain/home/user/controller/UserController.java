@@ -37,7 +37,12 @@ public class UserController {
 	public String selectUsers(Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
-		return "user/users.jsp";
+		return "users/users.jsp";
+	}
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String selectUsersSignup(Model model) {
+		return "users/signup";
 	}
 	
 	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

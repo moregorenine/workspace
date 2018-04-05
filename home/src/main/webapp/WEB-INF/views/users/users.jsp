@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<script src="js/user/user.js"></script>
+<script src="views/user/user.js"></script>
 <header class="main">
 	<h2>User List</h2>
 </header>
