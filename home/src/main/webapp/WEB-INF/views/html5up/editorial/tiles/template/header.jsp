@@ -1,6 +1,5 @@
 <script src="magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 <script src="views/html5up/editorial/tiles/template/header.js"></script>
-<script src="views/user/signup.js"></script>
 <link type="text/css" rel="stylesheet"
 	href="magnific-Popup/dist/magnific-popup.css" />
 

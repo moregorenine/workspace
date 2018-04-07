@@ -1,3 +1,7 @@
+<script>
+<%@include file="/WEB-INF/views/users/signup.js"%>
+</script>
+
 <h2>Sign Up</h2>
 <div class="row uniform">
 	<div class="12u$">
