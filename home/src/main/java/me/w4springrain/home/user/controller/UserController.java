@@ -37,7 +37,7 @@ public class UserController {
 	public String selectUsers(Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
-		return "users/users.jsp";
+		return "tiles:users/users";
 	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

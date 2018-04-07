@@ -14,12 +14,12 @@
 		<!-- <put-attribute name="footer"		value="/WEB-INF/views/tiles/template/default-footer.jsp" /> -->
 	</definition>
 
-	<definition name="*.jsp" extends="html5up-editorial">
+	<definition name="tiles:*" extends="html5up-editorial">
 		<put-attribute name="title"			value="Wait For Spring Rain" />
 		<put-attribute name="content"		value="/WEB-INF/views/{1}.jsp" />
 	</definition>
 	
-	<definition name="*/*.jsp" extends="html5up-editorial">
+	<definition name="tiles:*/*" extends="html5up-editorial">
 		<put-attribute name="title"			value="Wait For Spring Rain" />
 		<put-attribute name="content"		value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
