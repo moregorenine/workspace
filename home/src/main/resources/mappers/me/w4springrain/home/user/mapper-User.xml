@@ -17,8 +17,20 @@
 
 <mapper namespace="me.w4springrain.home.user.dao">
 
-  <insert id="createUser" parameterType="String">
-	INSERT INTO W4_USER VALUES(#{userId});
+  <insert id="createUser" parameterType="me.w4springrain.home.user.vo.User">
+	INSERT INTO W4_USER
+            (USER_ID
+             , SYSTEM
+             , EMAIL
+             , PASSWORD
+             , REG_DT
+             , UPT_DT)
+     VALUES ( #{userId}
+              , #{system}
+              , #{email}
+              , #{password}
+              , #{regDt}
+              , #{uptDt} ); 
   </insert>
   
   <select id="selectUsers" resultType="me.w4springrain.home.user.vo.User">

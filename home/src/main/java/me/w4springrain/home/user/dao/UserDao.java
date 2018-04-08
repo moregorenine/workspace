@@ -14,8 +14,8 @@ public class UserDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public void createUser(String userId) {
-		sqlSession.insert("me.w4springrain.home.user.dao.createUser", userId);
+	public void createUser(User user) {
+		sqlSession.insert("me.w4springrain.home.user.dao.createUser", user);
 	}
 
 	public List<User> selectUsers() {

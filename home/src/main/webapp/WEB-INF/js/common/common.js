@@ -49,7 +49,7 @@ function doAjax(doAjax_params) {
 			if (typeof errorCallBackFunction === "function") {
 				errorCallBackFunction(errorThrown);
 			} else {
-				alert("ajax error!");
+				alert("ajax error!\n" + errorThrown);
 			}
 
 		},

@@ -1,5 +1,6 @@
 package me.w4springrain.home.user.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -22,10 +23,16 @@ public class UserServiceImpl implements UserService {
 	UserDao userDao;
 	
 	@Override
-	public void createUser() {
+	public void createUser(User user) {
+		logger.debug("userId 생성");
 		String userId = CommonUtil.generateUUID();
-		logger.debug("userId 생성 : " +  userId);
-		userDao.createUser(userId);
+		Date now = new Date();
+		
+		user.setUserId(userId);
+		user.setRegDt(now);
+		user.setUptDt(now);
+		
+		userDao.createUser(user);
 	}
 	
 	@Override

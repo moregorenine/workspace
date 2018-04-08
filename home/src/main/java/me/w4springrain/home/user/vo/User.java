@@ -1,14 +1,14 @@
 package me.w4springrain.home.user.vo;
 
-import org.joda.time.DateTime;
+import java.util.Date;
 
 public class User {
 	String userId;
     String system;
     String email;
-    String passwork;
-    DateTime regDt;
-    DateTime uptDt;
+    String password;
+    Date regDt;
+    Date uptDt;
     
 	public String getUserId() {
 		return userId;
@@ -28,23 +28,22 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPasswork() {
-		return passwork;
+	public String getPassword() {
+		return password;
 	}
-	public void setPasswork(String passwork) {
-		this.passwork = passwork;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public DateTime getRegDt() {
+	public Date getRegDt() {
 		return regDt;
 	}
-	public void setRegDt(DateTime regDt) {
+	public void setRegDt(Date regDt) {
 		this.regDt = regDt;
 	}
-	public DateTime getUptDt() {
+	public Date getUptDt() {
 		return uptDt;
 	}
-	public void setUptDt(DateTime uptDt) {
+	public void setUptDt(Date uptDt) {
 		this.uptDt = uptDt;
 	}
-
 }

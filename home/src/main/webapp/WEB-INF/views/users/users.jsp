@@ -5,18 +5,26 @@
 	<h2>User List</h2>
 </header>
 
-<h4>사용자 목록</h4>
+<h3>사용자 목록</h3>
 <div class="table-wrapper">
 	<table>
 		<thead>
 			<tr>
-				<th>userId</th>
+				<th>User Id</th>
+				<th>system</th>
+				<th>email</th>
+				<th>Reg Date</th>
+				<th>Update Date</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="user" items="${users}" varStatus="status">
 				<tr>
 					<td>${user.userId}</td>
+					<td>${user.system}</td>
+					<td>${user.email}</td>
+					<td>${user.regDt}</td>
+					<td>${user.uptDt}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

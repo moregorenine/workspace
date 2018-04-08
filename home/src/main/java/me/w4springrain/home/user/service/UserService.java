@@ -9,7 +9,7 @@ public interface UserService {
 	/**
 	 * user 생성한다.
 	 */
-	void createUser();
+	void createUser(User user);
 
 	/**
 	 * users 조회한다.

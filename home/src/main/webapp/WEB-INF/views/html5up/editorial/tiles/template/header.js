@@ -1,17 +1,17 @@
 $(document).ready(function() {
-	fnInitFormSignup();
+	fnInitDivSignup();
 });
 
 /**
  * Sign Up Jsp Page 조회
  * @returns
  */
-function fnInitFormSignup() {
+function fnInitDivSignup() {
 	var params = $.extend({}, doAjax_params_default);
 	params['url'] = "/users/signup";
 	params['requestType'] = "GET";
 	params['dataType'] = "html";
-	params['successCallbackFunction'] = fnInitFormSignupCallback;
+	params['successCallbackFunction'] = fnInitDivSignupCallback;
 	doAjax(params);
 }
 
@@ -20,8 +20,8 @@ function fnInitFormSignup() {
  * @param html
  * @returns
  */
-function fnInitFormSignupCallback(html) {
-	$('#formSignup').html(html);
+function fnInitDivSignupCallback(html) {
+	$('#divSignup').html(html);
 	
 	$('.popup-with-form').magnificPopup({
 		type: 'inline',
