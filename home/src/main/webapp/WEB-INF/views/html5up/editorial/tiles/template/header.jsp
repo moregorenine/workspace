@@ -13,7 +13,7 @@
 				class="label">Snapchat</span></a></li>
 		<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 		<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-		<li><a class="popup-with-form" href="#divSignup"><span class="label">sign up</span></a></li>
+		<li><a class="popup-with-form" href="#divSignup" onclick="javascript:fnInitDivSignup();"><span class="label">sign up</span></a></li>
 	</ul>
 </header>
 <div id="divSignup" class="mfp-hide white-popup-block"></div>

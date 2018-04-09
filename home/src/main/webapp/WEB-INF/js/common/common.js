@@ -1,6 +1,7 @@
 var doAjax_params_default = {
 	'url' : null,
 	'requestType' : "POST",
+	'async' : true,
 	//'contentType' : 'application/x-www-form-urlencoded; charset=UTF-8',
 	'contentType' : 'application/json; charset=UTF-8',
 	'dataType' : 'json',
@@ -15,6 +16,7 @@ function doAjax(doAjax_params) {
 
 	var url = doAjax_params['url'];
 	var requestType = doAjax_params['requestType'];
+	var async = doAjax_params['async'];
 	var contentType = doAjax_params['contentType'];
 	var dataType = doAjax_params['dataType'];
 	var data = doAjax_params['data'];
@@ -32,6 +34,7 @@ function doAjax(doAjax_params) {
 		url : url,
 		crossDomain : true,
 		type : requestType,
+		async : async,
 		contentType : contentType,
 		dataType : dataType,
 		data : data,

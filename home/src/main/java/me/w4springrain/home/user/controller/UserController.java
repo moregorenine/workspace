@@ -32,7 +32,8 @@ public class UserController {
 	
 	@ModelAttribute("user")
     public User getUser() {
-        return new User();
+        logger.debug("SessionAttributes 생성 : user");
+		return new User();
     }
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
