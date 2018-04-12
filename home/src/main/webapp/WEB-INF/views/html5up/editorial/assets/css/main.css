@@ -2141,7 +2141,7 @@
 		/* font-family: "Roboto Slab", serif; */
 		font-weight: 700;
 		line-height: 1.5;
-		margin: 0 0 0.5em 0;
+		margin: 0 0 1em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -4065,3 +4065,31 @@
 			margin-top: 0;
 			padding-top: 0;
 		}
+
+/* 로딩*/
+#loading {
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	_position: absolute;
+	top: 0px;
+	width: 100%;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.loading {
+	background-color: white;
+	z-index: 199;
+}
+
+#loading_img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 35px;
+	margin-top: -75px;
+	margin-left: -75px;
+	z-index: 200;
+}

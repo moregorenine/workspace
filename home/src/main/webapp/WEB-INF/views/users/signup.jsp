@@ -1,7 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <script>
 	
-<%@include file="/WEB-INF/views/users/signup.js"%>
+<%@include file="/js/users/signup.js"%>
 	
 </script>
 

@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import me.w4springrain.home.user.vo.User;
+import me.w4springrain.home.user.domain.User;
 
 @Repository
 public class UserDao {

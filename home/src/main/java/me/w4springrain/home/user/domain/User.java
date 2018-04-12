@@ -1,4 +1,4 @@
-package me.w4springrain.home.user.vo;
+package me.w4springrain.home.user.domain;
 
 import java.util.Date;
 

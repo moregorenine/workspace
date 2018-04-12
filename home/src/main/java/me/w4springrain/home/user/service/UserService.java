@@ -2,7 +2,7 @@ package me.w4springrain.home.user.service;
 
 import java.util.List;
 
-import me.w4springrain.home.user.vo.User;
+import me.w4springrain.home.user.domain.User;
 
 public interface UserService {
 

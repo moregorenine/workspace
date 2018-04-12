@@ -1,3 +1,15 @@
+function initLoading() {
+	var loading = $(
+			'<div id="loading" class="loading"></div><img id="loading_img" alt="loading" src="/images/viewLoading.gif" />')
+			.appendTo(document.body).hide();
+
+	$(window).ajaxStart(function() {
+		loading.show();
+	}).ajaxStop(function() {
+		loading.hide();
+	});
+}
+
 var doAjax_params_default = {
 	'url' : null,
 	'requestType' : "POST",

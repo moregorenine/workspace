@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import me.w4springrain.home.common.util.CommonUtil;
 import me.w4springrain.home.user.dao.UserDao;
+import me.w4springrain.home.user.domain.User;
 import me.w4springrain.home.user.service.UserService;
-import me.w4springrain.home.user.vo.User;
 
 @Service("UserService")
 public class UserServiceImpl implements UserService {

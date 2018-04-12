@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import me.w4springrain.home.main.controller.HomeController;
+import me.w4springrain.home.user.domain.User;
 import me.w4springrain.home.user.service.UserService;
-import me.w4springrain.home.user.vo.User;
 
 @Controller
 @SessionAttributes("user")

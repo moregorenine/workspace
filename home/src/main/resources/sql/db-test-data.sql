@@ -5,9 +5,37 @@ INSERT INTO W4_USER
              , PASSWORD
              , REG_DT
              , UPT_DT)
-VALUES      ( 'hifsjdkfjsdlk'
+VALUES      ( 'SIHNj9pmIpus0M2nail6sC'
               , 'W4'
-              , 'moregorenine@gmail.com'
-              , '12234'
+              , 'moregorenine@naver.com'
+              , '7904'
               , CURRENT_TIMESTAMP
-              , CURRENT_TIMESTAMP ); 
+              , CURRENT_TIMESTAMP );
+
+INSERT INTO W4_USER
+            (USER_ID
+             , SYSTEM
+             , EMAIL
+             , PASSWORD
+             , REG_DT
+             , UPT_DT)
+VALUES      ( 'cy2eKXMRMCKW3rcxExIowC'
+              , 'W4'
+              , '01092663057@naver.com'
+              , '7904'
+              , CURRENT_TIMESTAMP
+              , CURRENT_TIMESTAMP );
+
+INSERT INTO W4_USER
+            (USER_ID
+             , SYSTEM
+             , EMAIL
+             , PASSWORD
+             , REG_DT
+             , UPT_DT)
+VALUES      ( 'Veltf13MIUvvu9XfmB57Ne'
+              , 'W4'
+              , 'js16.han@samsung.com'
+              , '7904'
+              , CURRENT_TIMESTAMP
+              , CURRENT_TIMESTAMP );
