@@ -1,9 +1,6 @@
 package me.w4springrain.home.user.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +46,11 @@ public class UserController {
 		model.addAttribute("users", users);
 		return "tiles:users/users";
 	}
+	
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	public String selectUsersLogin(@ModelAttribute User user, Model model) {
+//		return "users/login";
+//	}
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String selectUsersSignup(@ModelAttribute User user, Model model) {

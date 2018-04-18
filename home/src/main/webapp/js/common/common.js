@@ -1,4 +1,4 @@
-function initLoading() {
+/*function initLoading() {
 	var loading = $(
 			'<div id="loading" class="loading"></div><img id="loading_img" alt="loading" src="/images/viewLoading.gif" />')
 			.appendTo(document.body).hide();
@@ -8,7 +8,7 @@ function initLoading() {
 	}).ajaxStop(function() {
 		loading.hide();
 	});
-}
+}*/
 
 var doAjax_params_default = {
 	'url' : null,
