@@ -5,11 +5,11 @@
        
 <tiles-definitions>
 	
-	<definition name="html5up-editorial"	template="/WEB-INF/views/html5up/editorial/tiles/layouts/layout.jsp">
+	<definition name="html5up-editorial"	template="/html5up/editorial/tiles/layouts/layout.jsp">
 		<put-attribute name="title"			value="" />
-		<put-attribute name="header"		value="/WEB-INF/views/html5up/editorial/tiles/template/header.jsp" />
+		<put-attribute name="header"		value="/html5up/editorial/tiles/template/header.jsp" />
 		<!-- <put-attribute name="nav"			value="/WEB-INF/views/tiles/template/default-nav.jsp" /> -->
-		<put-attribute name="sidebar"		value="/WEB-INF/views/html5up/editorial/tiles/template/sidebar.jsp" />
+		<put-attribute name="sidebar"		value="/html5up/editorial/tiles/template/sidebar.jsp" />
 		<put-attribute name="content"		value="" />
 		<!-- <put-attribute name="footer"		value="/WEB-INF/views/tiles/template/default-footer.jsp" /> -->
 	</definition>

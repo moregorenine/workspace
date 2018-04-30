@@ -17,18 +17,19 @@ $(document).ready(function() {
 		}
 	});
 
-//	$('#aLogin').bind('click', function() {
-//		var params = $.extend({}, doAjax_params_default);
-//		params['url'] = "/users/login";
-//		params['requestType'] = "GET";
-//		params['dataType'] = "html";
-//		params['successCallbackFunction'] = drawDivLogin;
-//		doAjax(params);
-//	});
+	$('#aLogin').bind('click', function() {
+		debugger;
+		var params = $.extend({}, doAjax_params_default);
+		params['url'] = "/home/loginHtml";
+		params['requestType'] = "GET";
+		params['dataType'] = "html";
+		params['successCallbackFunction'] = drawDivLogin;
+		doAjax(params);
+	});
 	
 	$('#aSignup').bind('click', function() {
 		var params = $.extend({}, doAjax_params_default);
-		params['url'] = "/users/signup";
+		params['url'] = "/home/signupHtml";
 		params['requestType'] = "GET";
 		params['dataType'] = "html";
 		params['successCallbackFunction'] = drawDivSignup;
@@ -41,9 +42,9 @@ $(document).ready(function() {
  * @param html
  * @returns
  */
-//function drawDivLogin(html) {
-//	$('#divLogin').html(html);
-//}
+function drawDivLogin(html) {
+	$('#divLogin').html(html);
+}
 
 /**
  * Sign Up Jsp Page Layer Popup 세팅 

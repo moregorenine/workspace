@@ -1,7 +1,8 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <script>
 	
-<%@include file="/js/users/signup.js"%>
+<%@include file="/js/home/signup.js"%>
 	
 </script>
 

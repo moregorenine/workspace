@@ -4,6 +4,35 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+	<security:http pattern="/**/*.ico" security="none"></security:http>
+	<security:http pattern="/**/*.js" security="none"></security:http>
+	<security:http pattern="/**/*.css" security="none"></security:http>
+	<security:http pattern="/**/*.jpg" security="none"></security:http>
+	<security:http pattern="/images/**" security="none"></security:http>
+	
+	<security:http>
+		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/index.jsp" access="permitAll" />
+		<security:intercept-url pattern="/home*" access="permitAll" />
+		<security:intercept-url pattern="/home/**" access="permitAll" />
+		<security:intercept-url pattern="/**" access="hasRole('USER')" />
+		<!-- <security:form-login /> -->
+		<security:form-login login-page='/home/login'/>
+		<security:logout />
+	</security:http>
+	
+	
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="jin" password="{noop}79"
+					authorities="ROLE_USER, ROLE_ADMIN" />
+				<security:user name="you" password="{noop}79"
+					authorities="ROLE_USER" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
 	<!-- <security:http pattern="/**/*.js" security="none"></security:http>
 	<security:http pattern="/**/*.css" security="none"></security:http>
 	<security:http pattern="/images/**" security="none"></security:http>

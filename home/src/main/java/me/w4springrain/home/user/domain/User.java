@@ -1,13 +1,8 @@
 package me.w4springrain.home.user.domain;
 
-import java.util.Collection;
 import java.util.Date;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-public class User implements UserDetails {
-	private static final long serialVersionUID = 7568258132259202627L;
+public class User {
 	String userId;
 	String userName;
     String system;
@@ -51,34 +46,5 @@ public class User implements UserDetails {
 	}
 	public void setUptDt(Date uptDt) {
 		this.uptDt = uptDt;
-	}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String getUsername() {
-		return this.userName;
-	}
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

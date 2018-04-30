@@ -1,5 +1,5 @@
 /* 사용자 테이블 데이터 생성 */
-/*
+
 INSERT INTO W4_USER
             (USER_ID
              , SYSTEM
@@ -41,4 +41,3 @@ VALUES      ( 'Veltf13MIUvvu9XfmB57Ne'
               , '7904'
               , CURRENT_TIMESTAMP
               , CURRENT_TIMESTAMP );
-*/

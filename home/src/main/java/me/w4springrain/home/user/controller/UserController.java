@@ -1,6 +1,9 @@
 package me.w4springrain.home.user.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +21,6 @@ import me.w4springrain.home.user.domain.User;
 import me.w4springrain.home.user.service.UserService;
 
 @Controller
-@SessionAttributes("user")
 @RequestMapping(value = "/users")
 public class UserController {
 
@@ -27,34 +29,18 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@ModelAttribute("user")
-    public User getUser() {
-        logger.debug("SessionAttributes 생성 : user");
-		return new User();
-    }
-	
-	@RequestMapping(value = "", method = RequestMethod.POST)
-	public String createUser(@ModelAttribute User user, SessionStatus sessionStatus, Model model) {
-		userService.createUser(user);
-		sessionStatus.setComplete();
-		return "redirect:home";
-	}
+//	@RequestMapping(value = "", method = RequestMethod.POST)
+//	public String createUser(@ModelAttribute User user, SessionStatus sessionStatus, Model model) {
+//		userService.createUser(user);
+//		sessionStatus.setComplete();
+//		return "redirect:home";
+//	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String selectUsers(Model model) {
+	public String selectUsers(Locale locale, Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
 		return "tiles:users/users";
-	}
-	
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public String selectUsersLogin(@ModelAttribute User user, Model model) {
-//		return "users/login";
-//	}
-	
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
-	public String selectUsersSignup(@ModelAttribute User user, Model model) {
-		return "users/signup";
 	}
 	
 //	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

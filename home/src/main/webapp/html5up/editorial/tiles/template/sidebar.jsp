@@ -49,19 +49,19 @@
 			</header>
 			<div class="mini-posts">
 				<article>
-					<a href="#" class="image"><img src="images-editorial/pic07.jpg"
+					<a href="#" class="image"><img src="${pageContext.request.contextPath}/html5up/editorial/images/pic07.jpg"
 						alt="" /></a>
 					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
 						dolore aliquam.</p>
 				</article>
 				<article>
-					<a href="#" class="image"><img src="images-editorial/pic08.jpg"
+					<a href="#" class="image"><img src="${pageContext.request.contextPath}/html5up/editorial/images/pic08.jpg"
 						alt="" /></a>
 					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
 						dolore aliquam.</p>
 				</article>
 				<article>
-					<a href="#" class="image"><img src="images-editorial/pic09.jpg"
+					<a href="#" class="image"><img src="${pageContext.request.contextPath}/html5up/editorial/images/pic09.jpg"
 						alt="" /></a>
 					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
 						dolore aliquam.</p>
