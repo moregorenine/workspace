@@ -5,12 +5,9 @@
 	
 </script>
 
-<h2>Sign Up</h2>
+<h2>Login</h2>
 <form:form method="POST" action="/users" modelAttribute="user">
 	<div class="row uniform">
-		<div class="12u$">
-			<form:input path="system" />
-		</div>
 		<div class="12u$">
 			<form:input path="email" placeholder="Email" />
 		</div>
@@ -18,12 +15,8 @@
 			<form:input path="password" type="password" placeholder="Password" />
 		</div>
 		<div class="12u$">
-			<input type="password" name="passwordConfirm" value=""
-				placeholder="Password Confirm" />
-		</div>
-		<div class="12u$">
 			<ul class="actions small align-right">
-				<li><input type="submit" id="btnSignUp" value="Sign Up"
+				<li><input type="submit" id="btnLogin" value="Login"
 					class="small special" /></li>
 			</ul>
 		</div>

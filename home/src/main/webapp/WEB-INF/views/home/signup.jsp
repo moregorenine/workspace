@@ -3,10 +3,10 @@
 <script>
 	
 <%@include file="/js/home/signup.js"%>
-	
+
 </script>
 
-<h2>Sign Up</h2>
+<h2>Sing Up</h2>
 <form:form method="POST" action="/users" modelAttribute="user">
 	<div class="row uniform">
 		<div class="12u$">

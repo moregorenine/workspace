@@ -13,10 +13,16 @@
 	<security:http>
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/index.jsp" access="permitAll" />
+		<security:intercept-url pattern="/html5up/**" access="permitAll" />
+		<security:intercept-url pattern="/images/**" access="permitAll" />
+		<security:intercept-url pattern="/js/**" access="permitAll" />
+		<security:intercept-url pattern="/magnific-Popup/**" access="permitAll" />
+		<security:intercept-url pattern="/resources/**" access="permitAll" />
+		
 		<security:intercept-url pattern="/home*" access="permitAll" />
 		<security:intercept-url pattern="/home/**" access="permitAll" />
+		
 		<security:intercept-url pattern="/**" access="hasRole('USER')" />
-		<!-- <security:form-login /> -->
 		<security:form-login login-page='/home/login'/>
 		<security:logout />
 	</security:http>

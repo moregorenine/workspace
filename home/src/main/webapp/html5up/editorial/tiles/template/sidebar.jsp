@@ -14,9 +14,10 @@
 				<h2>Menu</h2>
 			</header>
 			<ul>
-				<li><a href="index.html">Homepage</a></li>
-				<li><a href="generic.html">Generic</a></li>
-				<li><a href="elements.html">Elements</a></li>
+				<li><a href="/home">About</a></li>
+				<li><a href="/qna">Q & A</a></li>
+				<li><a href="#">Swagger UI</a></li>
+				<!-- <li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>
 						<li><a href="#">Lorem Dolor</a></li>
@@ -34,7 +35,7 @@
 						<li><a href="#">Feugiat Veroeros</a></li>
 					</ul></li>
 				<li><a href="#">Maximus Erat</a></li>
-				<li><a href="#">Sapien Mauris</a></li>
+				<li><a href="#">Sapien Mauris</a></li> -->
 				<li><span class="opener">Admin</span>
 					<ul>
 						<li><a href="/users">User List</a></li>

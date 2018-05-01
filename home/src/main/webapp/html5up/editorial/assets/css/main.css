@@ -1,7 +1,8 @@
 @import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+/*
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-/* @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700"); */
-/* @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); */
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -46,7 +47,7 @@
 	}
 
 	body {
-		font-family: "Nanum Gothic", sans-serif;
+		/* font-family: "Nanum Gothic", sans-serif;
 		/* font-family: 'Nanum Pen Script', serif; */
 		-webkit-text-size-adjust: none;
 	}
@@ -2074,7 +2075,7 @@
 
 	body, input, select, textarea {
 		color: #7f888f;
-		/* font-family: "Open Sans", sans-serif; */
+		font-family: "Open Sans", sans-serif;
 		font-size: 13pt;
 		font-weight: 400;
 		line-height: 1.65;
@@ -2138,7 +2139,7 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3d4449;
-		/* font-family: "Roboto Slab", serif; */
+		font-family: "Roboto Slab", serif;
 		font-weight: 700;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
@@ -2227,7 +2228,7 @@
 		background: rgba(230, 235, 237, 0.25);
 		border-radius: 0.375em;
 		border: solid 1px rgba(210, 215, 217, 0.75);
-		/* font-family: "Courier New", monospace; */
+		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -2235,7 +2236,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		/* font-family: "Courier New", monospace; */
+		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -2276,7 +2277,7 @@
 	}
 
 	header p {
-		/* font-family: "Roboto Slab", serif; */
+		font-family: "Roboto Slab", serif;
 		font-size: 1em;
 		font-weight: 400;
 		letter-spacing: 0.075em;
@@ -2960,7 +2961,7 @@
 		color: #f56a6a !important;
 		cursor: pointer;
 		display: inline-block;
-		/* font-family: "Roboto Slab", serif; */
+		font-family: "Roboto Slab", serif;
 		font-size: 0.8em;
 		font-weight: 700;
 		height: 3.5em;
@@ -3811,7 +3812,7 @@
 		#header .logo {
 			border-bottom: 0;
 			color: inherit;
-			/* font-family: "Roboto Slab", serif; */
+			font-family: "Roboto Slab", serif;
 			font-size: 1.125em;
 		}
 
@@ -3971,7 +3972,7 @@
 		-ms-user-select: none;
 		user-select: none;
 		color: #3d4449;
-		/* font-family: "Roboto Slab", serif; */
+		font-family: "Roboto Slab", serif;
 		font-family: 400;
 		letter-spacing: 0.075em;
 		list-style: none;
