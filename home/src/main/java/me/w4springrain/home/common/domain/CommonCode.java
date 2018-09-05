@@ -3,45 +3,66 @@ package me.w4springrain.home.common.domain;
 import java.util.Date;
 
 public class CommonCode {
-	String userId;
-	String userName;
-	String system;
-	String email;
-	String password;
+	String codeId;
+	String codeCode;
+	String codeDesc;
+    String codeKor;
+    String codeEn;
+    String codeCh;
+    String parent;
+    int seq;
 	String regUser;
 	Date regDt;
 	String uptUser;
 	Date uptDt;
 	
-	public String getUserId() {
-		return userId;
+	public String getCodeId() {
+		return codeId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setCodeId(String codeId) {
+		this.codeId = codeId;
 	}
-	public String getUserName() {
-		return userName;
+	public String getCodeCode() {
+		return codeCode;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setCodeCode(String codeCode) {
+		this.codeCode = codeCode;
 	}
-	public String getSystem() {
-		return system;
+	public String getCodeDesc() {
+		return codeDesc;
 	}
-	public void setSystem(String system) {
-		this.system = system;
+	public void setCodeDesc(String codeDesc) {
+		this.codeDesc = codeDesc;
 	}
-	public String getEmail() {
-		return email;
+	public String getCodeKor() {
+		return codeKor;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCodeKor(String codeKor) {
+		this.codeKor = codeKor;
 	}
-	public String getPassword() {
-		return password;
+	public String getCodeEn() {
+		return codeEn;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setCodeEn(String codeEn) {
+		this.codeEn = codeEn;
+	}
+	public String getCodeCh() {
+		return codeCh;
+	}
+	public void setCodeCh(String codeCh) {
+		this.codeCh = codeCh;
+	}
+	public String getParent() {
+		return parent;
+	}
+	public void setParent(String parent) {
+		this.parent = parent;
+	}
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	public String getRegUser() {
 		return regUser;

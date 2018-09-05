@@ -18,7 +18,6 @@ $(document).ready(function() {
 	});
 
 	$('#aLogin').bind('click', function(data) {
-		alert(data);
 		var params = $.extend({}, doAjax_params_default);
 		params['url'] = "/home/loginHtml";
 		params['requestType'] = "GET";

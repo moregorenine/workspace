@@ -15,11 +15,11 @@ public class UserDao {
 	private SqlSession sqlSession;
 	
 	public void createUser(User user) {
-		sqlSession.insert("me.w4springrain.home.user.dao.createUser", user);
+		sqlSession.insert("users.createUser", user);
 	}
 
 	public List<User> selectUsers() {
-		List<User> users = sqlSession.selectList("me.w4springrain.home.user.dao.selectUsers");
+		List<User> users = sqlSession.selectList("users.selectUsers");
 		return users;
 	}
 

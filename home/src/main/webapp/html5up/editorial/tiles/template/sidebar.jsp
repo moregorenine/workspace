@@ -42,7 +42,7 @@
 					<ul>
 						<li><a href="/users">User</a></li>
 						<li><a href="/menus">Menu</a></li>
-						<li><a href="/common-codes">Common Code</a></li>
+						<li><a href="javascript:sidebar.selectMenu('/common-codes');">Common Code</a></li>
 					</ul>
 				</li>
 			</ul>

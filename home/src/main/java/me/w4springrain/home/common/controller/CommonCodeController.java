@@ -3,8 +3,6 @@ package me.w4springrain.home.common.controller;
 import java.util.List;
 import java.util.Locale;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import me.w4springrain.home.common.domain.CommonCode;
 import me.w4springrain.home.common.service.CommonCodeService;
-import me.w4springrain.home.user.domain.User;
 
 @Controller
 @RequestMapping(value = "/common-codes")
 public class CommonCodeController {
 
-	private static final Logger logger = LoggerFactory.getLogger(CommonCodeController.class);
+//	private static final Logger logger = LoggerFactory.getLogger(CommonCodeController.class);
 	
 	@Autowired
 	CommonCodeService commonCodeService;
@@ -34,8 +31,8 @@ public class CommonCodeController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String selectCommonCodes(Locale locale, Model model) {
 		List<CommonCode> commonCodes = commonCodeService.selectCommonCodes();
-		model.addAttribute("users", users);
-		return "tiles:users/users";
+		model.addAttribute("commonCodes", commonCodes);
+		return "common/common-codes";
 	}
 	
 //	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

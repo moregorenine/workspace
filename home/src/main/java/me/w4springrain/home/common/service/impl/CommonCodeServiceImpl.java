@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import me.w4springrain.home.common.dao.CommonCodeDao;
@@ -22,8 +20,7 @@ public class CommonCodeServiceImpl implements CommonCodeService{
 
 	@Override
 	public List<CommonCode> selectCommonCodes() {
-		// TODO Auto-generated method stub
-		return null;
+		return commonCodeDao.selectCommonCodes();
 	}
 	
 }
