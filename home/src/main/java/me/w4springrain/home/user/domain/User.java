@@ -5,17 +5,25 @@ import java.util.Date;
 public class User {
 	String userId;
 	String userName;
-    String system;
-    String email;
-    String password;
-    Date regDt;
-    Date uptDt;
-    
+	String system;
+	String email;
+	String password;
+	String regUser;
+	Date regDt;
+	String uptUser;
+	Date uptDt;
+	
 	public String getUserId() {
 		return userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getSystem() {
 		return system;
@@ -35,11 +43,23 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getRegUser() {
+		return regUser;
+	}
+	public void setRegUser(String regUser) {
+		this.regUser = regUser;
+	}
 	public Date getRegDt() {
 		return regDt;
 	}
 	public void setRegDt(Date regDt) {
 		this.regDt = regDt;
+	}
+	public String getUptUser() {
+		return uptUser;
+	}
+	public void setUptUser(String uptUser) {
+		this.uptUser = uptUser;
 	}
 	public Date getUptDt() {
 		return uptDt;

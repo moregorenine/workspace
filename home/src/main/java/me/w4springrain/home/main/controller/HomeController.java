@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import me.w4springrain.home.user.domain.User;
@@ -34,12 +35,13 @@ public class HomeController {
 	/**
 	 * default main 화면
 	 * @param locale
+	 * @param booleanPopLogin : Login 팝업 자동 호출 여부 ("true":자동 호출)
+	 * @param logFail : Login 실패시("true":로그 실패) booleanPopLogin 값도 "true" 설정 
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		model.addAttribute("booleanLogin", "false");
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
@@ -49,26 +51,6 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "tiles:home";
-	}
-	
-	/**
-	 * 로긴페이지 자동호출
-	 * @param user
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String selectUsersLogin(Locale locale, Model model) {
-		model.addAttribute("booleanLogin", "true");
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
 		return "tiles:home";
 	}
 	
@@ -79,8 +61,19 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/loginHtml", method = RequestMethod.GET)
-	public String selectUsersLogin(@ModelAttribute User user, Model model) {
+	public String selectUsersLogin(@ModelAttribute User user, @RequestParam(required = false) String logFailMsg, Model model) {
 		return "home/login";
+	}
+	
+	/**
+	 * login page popup jsp
+	 * @param user
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(@ModelAttribute User user, @RequestParam(required = false) String logFailMsg, Model model) {
+		return "tilesPopup:home/login";
 	}
 	
 	/**

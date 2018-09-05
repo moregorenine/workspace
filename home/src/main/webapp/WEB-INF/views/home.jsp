@@ -1,10 +1,8 @@
-<%@ page session="false"%>
+<%-- <%@ page session="false"%> --%>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="${pageContext.request.contextPath}/js/home.js"></script>
 
-<script>
-	var booleanLogin = ${booleanLogin};
-</script>
 <!-- Elements -->
 <h2 id="elements">ABOUT</h2>
 
@@ -12,15 +10,18 @@
 	<div class="6u 12u$(small)">
 		<h3>We wait for spring rain</h3>
 		<p>
-			<span class="image right"><img
-				src="${pageContext.request.contextPath}/images/home/seed.jpg" alt="" /></span><strong>우리는
-				봄비를 기다립니다.</strong><br>단단하고 울통한 진갈색 껍질의 씨앗은 어디서 왔을까요?<br> 바람에
-			흩날렸을지, 빗물에 휩쓸렸을지, 야생동물의 털에 옮겨졌을지, 새의 소화기관을 거쳐 배설되었을지 아니면 이런 복수의 과정들을
+			<span class="image right">
+				<img src="${pageContext.request.contextPath}/images/home/seed.jpg" alt="" />
+			</span>
+			<strong>우리는 봄비를 기다립니다.</strong><br>
+			단단하고 울통한 진갈색 껍질의 씨앗은 어디서 왔을까요?<br>
+			바람에  흩날렸을지, 빗물에 휩쓸렸을지, 야생동물의 털에 옮겨졌을지, 새의 소화기관을 거쳐 배설되었을지 아니면 이런 복수의 과정들을
 			거쳐 그곳에 안착했을지 여럿 상상을 해봅니다.<br>그렇게 기약없는 휴먼기간을 거쳐 싹을 틔울 조건이 갖추어졌을
 			때,<br>씨앗은 껍질을 깨고 발아합니다.<br> <a href="/main">w4springrain.me</a>
 			또한 그런 과정을 거쳐 싹을 틔웠습니다.<br>삶의 경험을 비춰 보면 출발점 대부분은 최적의 조건이 아니였던 것
 			같습니다. 싹을 틔운 순간 변화시킬 수 없을 것 같은 이 외부요인에 순응이 아닌 적응을 해나가고자 합니다. 연약하지 않은
-			우리는 그렇게 <strong>봄비를 기다립니다.</strong>
+			우리는 그렇게 <strong>봄비를 기다립니다.
+			</strong>
 		</p>
 	</div>
 	<div class="6u$ 12u$(small)">
@@ -37,4 +38,8 @@
 			생산하는 사람은 제품이 아닌 제품의 사용자가 목표가 되어야 하며 거기에 초점을 맞춰 집중해야 한다고 생각합니다.
 		</p>
 	</div>
+	<c:if test="${not empty logFail}">
+	<input type="hidden" name="logFailMsg" value="${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message}">
+	${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+	</c:if>
 </div>

@@ -14,7 +14,7 @@ import me.w4springrain.home.user.dao.UserDao;
 import me.w4springrain.home.user.domain.User;
 import me.w4springrain.home.user.service.UserService;
 
-@Service("UserService")
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);

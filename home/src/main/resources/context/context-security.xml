@@ -4,26 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<security:http pattern="/**/*.ico" security="none"></security:http>
-	<security:http pattern="/**/*.js" security="none"></security:http>
-	<security:http pattern="/**/*.css" security="none"></security:http>
-	<security:http pattern="/**/*.jpg" security="none"></security:http>
+	<security:http pattern="/html5up/**" security="none"></security:http>
 	<security:http pattern="/images/**" security="none"></security:http>
+	<security:http pattern="/js/**" security="none"></security:http>
+	<security:http pattern="/magnific-Popup/**" security="none"></security:http>
+	<security:http pattern="/resources/**" security="none"></security:http>
 	
 	<security:http>
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/index.jsp" access="permitAll" />
-		<security:intercept-url pattern="/html5up/**" access="permitAll" />
-		<security:intercept-url pattern="/images/**" access="permitAll" />
-		<security:intercept-url pattern="/js/**" access="permitAll" />
-		<security:intercept-url pattern="/magnific-Popup/**" access="permitAll" />
-		<security:intercept-url pattern="/resources/**" access="permitAll" />
-		
 		<security:intercept-url pattern="/home*" access="permitAll" />
 		<security:intercept-url pattern="/home/**" access="permitAll" />
-		
-		<security:intercept-url pattern="/**" access="hasRole('USER')" />
-		<security:form-login login-page='/home/login'/>
+		<security:intercept-url pattern="/**" access="permitAll" />
+		<!-- TODO 로긴처리 -->
+		<!-- <security:intercept-url pattern="/**" access="hasRole('USER')" /> -->
+		<security:form-login login-page='/home/login'
+							username-parameter="email" password-parameter="password"
+							login-processing-url="/loginProcess" authentication-failure-url="/home/login?logFail=true"/>
 		<security:logout />
 	</security:http>
 	

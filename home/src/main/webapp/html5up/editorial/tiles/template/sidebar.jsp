@@ -1,3 +1,5 @@
+<script src="${pageContext.request.contextPath}/html5up/editorial/tiles/template/sidebar.js"></script>
+
 <div id="sidebar">
 	<div class="inner">
 
@@ -38,8 +40,11 @@
 				<li><a href="#">Sapien Mauris</a></li> -->
 				<li><span class="opener">Admin</span>
 					<ul>
-						<li><a href="/users">User List</a></li>
-					</ul></li>
+						<li><a href="/users">User</a></li>
+						<li><a href="/menus">Menu</a></li>
+						<li><a href="/common-codes">Common Code</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 

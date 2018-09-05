@@ -7,19 +7,33 @@
 	
 	<definition name="html5up-editorial"	template="/html5up/editorial/tiles/layouts/layout.jsp">
 		<put-attribute name="title"			value="" />
-		<put-attribute name="header"		value="/html5up/editorial/tiles/template/header.jsp" />
+		<put-attribute name="header"		value="" />
 		<!-- <put-attribute name="nav"			value="/WEB-INF/views/tiles/template/default-nav.jsp" /> -->
-		<put-attribute name="sidebar"		value="/html5up/editorial/tiles/template/sidebar.jsp" />
+		<put-attribute name="sidebar"		value="" />
 		<put-attribute name="content"		value="" />
 		<!-- <put-attribute name="footer"		value="/WEB-INF/views/tiles/template/default-footer.jsp" /> -->
 	</definition>
 
 	<definition name="tiles:*" extends="html5up-editorial">
 		<put-attribute name="title"			value="Wait For Spring Rain" />
+		<put-attribute name="header"		value="/html5up/editorial/tiles/template/header.jsp" />
+		<put-attribute name="sidebar"		value="/html5up/editorial/tiles/template/sidebar.jsp" />
 		<put-attribute name="content"		value="/WEB-INF/views/{1}.jsp" />
 	</definition>
 	
 	<definition name="tiles:**/*" extends="html5up-editorial">
+		<put-attribute name="title"			value="Wait For Spring Rain" />
+		<put-attribute name="header"		value="/html5up/editorial/tiles/template/header.jsp" />
+		<put-attribute name="sidebar"		value="/html5up/editorial/tiles/template/sidebar.jsp" />
+		<put-attribute name="content"		value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="tilesPopup:*" extends="html5up-editorial">
+		<put-attribute name="title"			value="Wait For Spring Rain" />
+		<put-attribute name="content"		value="/WEB-INF/views/{1}.jsp" />
+	</definition>
+	
+	<definition name="tilesPopup:**/*" extends="html5up-editorial">
 		<put-attribute name="title"			value="Wait For Spring Rain" />
 		<put-attribute name="content"		value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>

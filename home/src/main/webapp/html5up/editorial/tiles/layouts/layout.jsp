@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/html5up/editorial/assets/css/main.css" />
 <!-- Scripts -->
+<script src="${pageContext.request.contextPath}/html5up/editorial/tiles/layouts/layout.js"></script>
 <script src="${pageContext.request.contextPath}/html5up/editorial/assets/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/html5up/editorial/assets/js/skel.min.js"></script>
 <script src="${pageContext.request.contextPath}/html5up/editorial/assets/js/util.js"></script>
