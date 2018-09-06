@@ -9,6 +9,7 @@
 	<security:http pattern="/js/**" security="none"></security:http>
 	<security:http pattern="/magnific-Popup/**" security="none"></security:http>
 	<security:http pattern="/resources/**" security="none"></security:http>
+	<security:http pattern="/zTree_v3/**" security="none"></security:http>
 	
 	<security:http>
 		<security:intercept-url pattern="/" access="permitAll" />
