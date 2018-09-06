@@ -15,7 +15,7 @@ public class MenuDao {
 	private SqlSession sqlSession;
 
 	public List<Menu> selectUsers() {
-		List<Menu> menus = sqlSession.selectList("menu.selectMenus");
+		List<Menu> menus = sqlSession.selectList("menus.selectMenus");
 		return menus;
 	}
 }

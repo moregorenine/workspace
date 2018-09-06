@@ -40,7 +40,7 @@ public class UserController {
 	public String selectUsers(Locale locale, Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
-		return "tiles:users/users";
+		return "users/users";
 	}
 	
 //	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

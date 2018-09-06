@@ -26,7 +26,7 @@ public class MenuController {
 	@Autowired
 	MenuService menuService;
 	
-	@RequestMapping(value = "/menus", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String selectMenus(@ModelAttribute Menu menu, Model model) {
 		List<Menu> menus = menuService.selectMenus();
 		model.addAttribute("menus", menus);

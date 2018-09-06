@@ -17,7 +17,7 @@
 
 <mapper namespace="menus">
 
-  <insert id="createUser" parameterType="me.w4springrain.home.user.domain.User">
+  <insert id="createMenu" parameterType="me.w4springrain.home.user.domain.User">
 	INSERT INTO W4_USER
             (USER_ID
              , SYSTEM
@@ -33,7 +33,7 @@
               , #{uptDt} ); 
   </insert>
   
-  <select id="selectUsers" resultType="me.w4springrain.home.menu.damain.Menu">
+  <select id="selectMenus" resultType="me.w4springrain.home.menu.damain.Menu">
     SELECT * FROM W4_MENU;
   </select>
 

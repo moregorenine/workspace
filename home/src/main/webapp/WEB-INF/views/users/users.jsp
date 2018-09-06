@@ -2,29 +2,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <script src="${pageContext.request.contextPath}/js/users/users.js"></script>
 <header class="main">
-	<h2>Menu List</h2>
+	<h2>User List</h2>
 </header>
 
-<h3>메뉴 목록</h3>
+<h3>사용자 목록</h3>
 <div class="table-wrapper">
 	<table>
 		<thead>
 			<tr>
-				<th>Menu Id</th>
-				<th>Menu Name</th>
-				<th>url</th>
+				<th>User Id</th>
+				<th>system</th>
+				<th>email</th>
 				<th>Reg Date</th>
 				<th>Update Date</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="item" items="${menus}" varStatus="status">
+			<c:forEach var="user" items="${users}" varStatus="status">
 				<tr>
-					<td>${item.menuId}</td>
-					<td>${item.menuNm}</td>
-					<td>${item.url}</td>
-					<td>${item.regDt}</td>
-					<td>${item.uptDt}</td>
+					<td>${user.userId}</td>
+					<td>${user.system}</td>
+					<td>${user.email}</td>
+					<td>${user.regDt}</td>
+					<td>${user.uptDt}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
