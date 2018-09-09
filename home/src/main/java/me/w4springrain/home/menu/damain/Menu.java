@@ -2,7 +2,9 @@ package me.w4springrain.home.menu.damain;
 
 import java.util.Date;
 
-public class Menu {
+import me.w4springrain.home.common.domain.CommonVO;
+
+public class Menu extends CommonVO {
 	String menuId;
 	String menuNm;
 	String parent;

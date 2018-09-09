@@ -6,6 +6,7 @@
 </header>
 
 <h3>사용자 목록</h3>
+
 <div class="table-wrapper">
 	<table>
 		<thead>

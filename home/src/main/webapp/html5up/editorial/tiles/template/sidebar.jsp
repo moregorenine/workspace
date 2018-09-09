@@ -41,7 +41,7 @@
 				<li><span class="opener">Admin</span>
 					<ul>
 						<li><a href="javascript:sidebar.selectMenu('/users');">User</a></li>
-						<li><a href="javascript:sidebar.selectMenu('/menus');">Menu</a></li>
+						<li><a id="menu" href="/menus">Menu</a></li>
 						<li><a href="javascript:sidebar.selectMenu('/common-codes');">Common Code</a></li>
 					</ul>
 				</li>

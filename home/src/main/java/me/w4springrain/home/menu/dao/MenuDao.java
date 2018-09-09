@@ -14,6 +14,10 @@ public class MenuDao {
 	@Autowired
 	private SqlSession sqlSession;
 
+	public int createMenu(Menu menu) {
+		return sqlSession.insert("menus.createMenus", menu);
+	}
+	
 	public List<Menu> selectUsers() {
 		List<Menu> menus = sqlSession.selectList("menus.selectMenus");
 		return menus;

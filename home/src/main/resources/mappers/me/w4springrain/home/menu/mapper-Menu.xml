@@ -17,20 +17,28 @@
 
 <mapper namespace="menus">
 
-  <insert id="createMenu" parameterType="me.w4springrain.home.user.domain.User">
+  <insert id="createMenu" parameterType="me.w4springrain.home.menu.damain.Menu">
 	INSERT INTO W4_USER
-            (USER_ID
-             , SYSTEM
-             , EMAIL
-             , PASSWORD
+            (MENU_ID
+             , MENU_NM
+             , PARENT
+             , URL
+             , SEQ
+             , USE_YN
+             , REG_USER
              , REG_DT
+             , UPT_USER
              , UPT_DT)
-     VALUES ( #{userId}
-              , #{system}
-              , #{email}
-              , #{password}
-              , #{regDt}
-              , #{uptDt} ); 
+     VALUES ( #{menuId}
+             , #{menuNm}
+             , #{parent}
+             , #{url}
+             , #{seq}
+             , #{useYn}
+             , #{regUser}
+             , #{regDt}
+             , #{uptUser}
+             , #{uptDt} ); 
   </insert>
   
   <select id="selectMenus" resultType="me.w4springrain.home.menu.damain.Menu">

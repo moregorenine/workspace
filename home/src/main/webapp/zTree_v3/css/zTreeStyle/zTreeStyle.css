@@ -28,6 +28,7 @@ website:	http://code.google.com/p/jquerytree/
 .ztree li span {line-height:16px; margin-right:2px}
 .ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
 	border:0 none; cursor: pointer;outline:none;
+	box-shadow: inset 0 0 0 0px #f56a6a;
 	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
 	background-image:url("./img/zTreeStandard.png"); *background-image:url("./img/zTreeStandard.gif")}
 
