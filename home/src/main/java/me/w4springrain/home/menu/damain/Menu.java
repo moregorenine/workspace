@@ -1,6 +1,7 @@
 package me.w4springrain.home.menu.damain;
 
 import java.util.Date;
+import java.util.List;
 
 import me.w4springrain.home.common.domain.CommonVO;
 
@@ -14,6 +15,8 @@ public class Menu extends CommonVO {
 	Date regDt;
 	String uptUser;
 	Date uptDt;
+	List<ZTree> zTrees;
+	
 	public String getMenuId() {
 		return menuId;
 	}
@@ -67,5 +70,11 @@ public class Menu extends CommonVO {
 	}
 	public void setUptDt(Date uptDt) {
 		this.uptDt = uptDt;
+	}
+	public List<ZTree> getzTrees() {
+		return zTrees;
+	}
+	public void setzTrees(List<ZTree> zTrees) {
+		this.zTrees = zTrees;
 	}
 }

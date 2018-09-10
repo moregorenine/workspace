@@ -13,11 +13,12 @@
 
 <div class="row">
 	<div class="4u 12u$(small) box">
-		<ul id="treeDemo" class="ztree"></ul>
+		<ul id="zTree" class="ztree"></ul>
 	</div>
 	<div class="8u$ 12u$(small)">
-		<form:form method="post" action="menus">
+		<form:form modelAttribute="menu" method="post" action="menus">
 			<input type="hidden" name="_method" value="post">
+			<%-- <form:input type="hidden" path="zTrees" /> --%>
 			<div class="row uniform">
 				<div class="6u 12u$(xsmall)">
 					<label for="menuId">ID</label>
@@ -45,7 +46,7 @@
 				<!-- Break -->
 				<div class="12u$">
 					<ul class="actions">
-						<li><input type="submit" value="submit" class="special" /></li>
+						<li><input type="submit" value="submit" class="special" id="btnSubmit"/></li>
 						<!-- <li><input type="reset" value="Reset" /></li> -->
 					</ul>
 				</div>

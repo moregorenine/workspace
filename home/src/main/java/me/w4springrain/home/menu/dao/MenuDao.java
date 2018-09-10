@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import me.w4springrain.home.menu.damain.Menu;
+import me.w4springrain.home.menu.damain.ZTree;
 
 @Repository
 public class MenuDao {
@@ -14,8 +15,8 @@ public class MenuDao {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public int createMenu(Menu menu) {
-		return sqlSession.insert("menus.createMenus", menu);
+	public int createMenu(ZTree zTree) {
+		return sqlSession.insert("menus.createMenus", zTree);
 	}
 	
 	public List<Menu> selectUsers() {

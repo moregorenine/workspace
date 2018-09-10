@@ -40,8 +40,29 @@ $(document).ready(function() {
 		{ id:3, pId:0, name:"pNode 3 - no child", isParent:true}
 	];
 
-	$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	$.fn.zTree.init($("#zTree"), setting, zNodes);
+	
+	/*버튼 Event 정의*/
+	$("#menu").submit(function( event ) {
+		event.preventDefault();
+		var treeObj = $.fn.zTree.getZTreeObj("zTree");
+		var nodes = treeObj.getNodes();
+//		$("#zTrees").val(nodes);
+		debugger;
+		var data = {};//$("#menu").serialize();
+		data.zTrees = nodes;
+		var params = $.extend({}, doAjax_params_default);
+		params['url'] = "/menus";
+		params['requestType'] = "POST";
+		params['data'] = JSON.stringify(data);
+//		params['successCallbackFunction'] = callback1;
+		doAjax(params);
+	});
 });
+
+function callback1() {
+	alert(2);
+}
 
 //$('#btnRegUser').click(function() {
 //	var data = {};

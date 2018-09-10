@@ -29,18 +29,18 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-//	@RequestMapping(value = "", method = RequestMethod.POST)
-//	public String createUser(@ModelAttribute User user, SessionStatus sessionStatus, Model model) {
-//		userService.createUser(user);
-//		sessionStatus.setComplete();
-//		return "redirect:home";
-//	}
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	public String createUser(@ModelAttribute User user, SessionStatus sessionStatus, Model model) {
+		userService.createUser(user);
+		sessionStatus.setComplete();
+		return "redirect:home";
+	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String selectUsers(Locale locale, Model model) {
 		List<User> users = userService.selectUsers();
 		model.addAttribute("users", users);
-		return "users/users";
+		return "tiles:users/users";
 	}
 	
 //	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

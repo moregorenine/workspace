@@ -6,6 +6,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
+<meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
+<meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
 <title><tiles:getAsString name="title" /></title>
 <link rel="shortcut icon" href="<c:url value='resources/favicon.ico'/>" type="image/x-icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -18,12 +20,21 @@
 <script src="${pageContext.request.contextPath}/html5up/editorial/assets/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/js/common/common.js"></script>
 <script src="${pageContext.request.contextPath}/html5up/editorial/tiles/layouts/layout.js"></script>
+<script type="text/javascript">
+var token = $("meta[name='_csrf']").attr("content");
+var header = $("meta[name='_csrf_header']").attr("content");
+$(function() {
+    $(document).ajaxSend(function(e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
+});
+</script>
 </head>
 
 <body>
-<input type="hidden"
+<%-- <input type="hidden"
 	name="${_csrf.parameterName}"
-	value="${_csrf.token}"/>
+	value="${_csrf.token}"/> --%>
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -36,7 +47,7 @@
 				<tiles:insertAttribute name="header" />
 
 				<!-- Content -->
-				<section name="sec-content">
+				<section>
 					<tiles:insertAttribute name="content" />
 				</section>
 

@@ -41,5 +41,16 @@
 		<beans:property name="order" value="0" />
 	</beans:bean>
 
-	
+	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+				<!-- <beans:bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<beans:bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<beans:bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<beans:bean class="org.springframework.http.converter.StringHttpMessageConverter" /> -->
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
 </beans:beans>
