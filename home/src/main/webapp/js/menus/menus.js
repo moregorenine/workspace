@@ -9,7 +9,7 @@ $(document).ready(function() {
 		};
 
 	var zNodes =[
-		{ id:1, pId:0, name:"pNode 1", open:true},
+		/*{ id:1, pId:0, name:"pNode 1", open:true},
 		{ id:11, pId:1, name:"pNode 11"},
 		{ id:111, pId:11, name:"leaf node 111"},
 		{ id:112, pId:11, name:"leaf node 112"},
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		{ id:232, pId:23, name:"leaf node 232"},
 		{ id:233, pId:23, name:"leaf node 233"},
 		{ id:234, pId:23, name:"leaf node 234"},
-		{ id:3, pId:0, name:"pNode 3 - no child", isParent:true}
+		{ id:3, pId:0, name:"pNode 3 - no child", isParent:true}*/
 	];
 
 	$.fn.zTree.init($("#zTree"), setting, zNodes);
@@ -47,9 +47,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		var treeObj = $.fn.zTree.getZTreeObj("zTree");
 		var nodes = treeObj.getNodes();
-//		$("#zTrees").val(nodes);
-		debugger;
-		var data = {};//$("#menu").serialize();
+		var data = {};
 		data.zTrees = nodes;
 		var params = $.extend({}, doAjax_params_default);
 		params['url'] = "/menus";

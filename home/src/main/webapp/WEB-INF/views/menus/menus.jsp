@@ -18,7 +18,6 @@
 	<div class="8u$ 12u$(small)">
 		<form:form modelAttribute="menu" method="post" action="menus">
 			<input type="hidden" name="_method" value="post">
-			<%-- <form:input type="hidden" path="zTrees" /> --%>
 			<div class="row uniform">
 				<div class="6u 12u$(xsmall)">
 					<label for="menuId">ID</label>
