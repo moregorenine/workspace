@@ -33,11 +33,11 @@ public class MenuController {
 //		int resultCnt = menuService.createMenu(zTrees);
 		logger.debug("createMenu End");
 //		logger.debug("createMenu Count : ", resultCnt);
-		return "redirect:home";
+		return "redirect:menus";
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String selectMenus(@ModelAttribute Menu menu, Model model) {
+	public String selectMenus(Model model) {
 		List<Menu> menus = menuService.selectMenus();
 		model.addAttribute("menus", menus);
 		return "tiles:menus/menus";

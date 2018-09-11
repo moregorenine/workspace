@@ -3,6 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/zTree_v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.core.js"></script>
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/zTree_v3/js/jquery.ztree.exedit.js"></script> --%>
 <script src="${pageContext.request.contextPath}/js/menus/menus.js"></script>
 
 <header class="main">
@@ -16,7 +18,7 @@
 		<ul id="zTree" class="ztree"></ul>
 	</div>
 	<div class="8u$ 12u$(small)">
-		<form:form modelAttribute="menu" method="post" action="menus">
+		<form id="formMenus" method="post" action="menus">
 			<input type="hidden" name="_method" value="post">
 			<div class="row uniform">
 				<div class="6u 12u$(xsmall)">
@@ -49,6 +51,16 @@
 						<!-- <li><input type="reset" value="Reset" /></li> -->
 					</ul>
 				</div>
-		</form:form>
+		</form>
 	</div>
+</div>
+
+<div id="rMenu">
+	<ul>
+		<li id="m_add" onclick="addTreeNode();">Add Node</li>
+		<li id="m_del" onclick="removeTreeNode();">Delete Node</li>
+		<!-- <li id="m_check" onclick="checkTreeNode(true);">Check Node</li> -->
+		<!-- <li id="m_unCheck" onclick="checkTreeNode(false);">Uncheck Node</li> -->
+		<li id="m_reset" onclick="resetTree();">Resume zTree</li>
+	</ul>
 </div>

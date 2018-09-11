@@ -96,3 +96,21 @@ ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height
 	padding:0;
 	background:none;
 }*/
+
+div#rMenu {
+	position: absolute;
+	visibility: hidden;
+	top: 0;
+}
+
+div#rMenu ul {
+	margin: 0;
+	padding: 0;
+}
+div#rMenu ul li {
+	margin: 1px 0;
+	padding: 0 5px;
+	cursor: pointer;
+	list-style: none outside none;
+	background-color: #DFDFDF;
+}
