@@ -3994,7 +3994,8 @@
 				color: #f56a6a;
 			}
 
-			#menu ul a.opener, #menu ul span.opener {
+			#menu ul a.opener, #menu ul span.opener,
+			#menu ul a.sub-opener, #menu ul span.sub-opener {
 				-moz-transition: color 0.2s ease-in-out;
 				-webkit-transition: color 0.2s ease-in-out;
 				-ms-transition: color 0.2s ease-in-out;
@@ -4004,7 +4005,8 @@
 				position: relative;
 			}
 
-				#menu ul a.opener:before, #menu ul span.opener:before {
+				#menu ul a.opener:before, #menu ul span.opener:before,
+				#menu ul a.sub-opener:before, #menu ul span.sub-opener:before {
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
 					font-family: FontAwesome;
@@ -4013,7 +4015,8 @@
 					text-transform: none !important;
 				}
 
-				#menu ul a.opener:before, #menu ul span.opener:before {
+				#menu ul a.opener:before, #menu ul span.opener:before,
+				#menu ul a.sub-opener:before, #menu ul span.sub-opener:before {
 					-moz-transition: color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
 					-webkit-transition: color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 					-ms-transition: color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
@@ -4024,15 +4027,18 @@
 					right: 0;
 				}
 
-				#menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
+				#menu ul a.opener:hover:before, #menu ul span.opener:hover:before,
+				#menu ul a.sub-opener:hover:before, #menu ul span.sub-opener:hover:before {
 					color: #f56a6a;
 				}
 
-				#menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
+				#menu ul a.opener.active + ul, #menu ul span.opener.active + ul,
+				#menu ul a.sub-opener.active + ul, #menu ul span.sub-opener.active + ul {
 					display: block;
 				}
 
-				#menu ul a.opener.active:before, #menu ul span.opener.active:before {
+				#menu ul a.opener.active:before, #menu ul span.opener.active:before,
+				#menu ul a.sub-opener.active:before, #menu ul span.sub-opener.active:before {
 					-moz-transform: rotate(-180deg);
 					-webkit-transform: rotate(-180deg);
 					-ms-transform: rotate(-180deg);
@@ -4046,6 +4052,13 @@
 	}
 
 		#menu > ul > li > ul {
+			color: #9fa3a6;
+			display: none;
+			margin: 0.5em 0 1.5em 0;
+			padding-left: 1em;
+		}
+		
+		#menu > ul > li > ul > li > ul {
 			color: #9fa3a6;
 			display: none;
 			margin: 0.5em 0 1.5em 0;

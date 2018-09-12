@@ -257,27 +257,68 @@
 
 		// Menu.
 			var $menu = $('#menu'),
-				$menu_openers = $menu.children('ul').find('.opener');
+				$menu_items = $('#menu a, #menu span'),//,$menu.children('ul').find('.opener'),
+				$menu_openers = $menu.children('ul').find('.opener'),
+				$menu_sub_openers = $menu.children('ul').find('.sub-opener');
 
-			// Openers.
-				$menu_openers.each(function() {
+			// Menus.
+				$menu_items.each(function() {
 
 					var $this = $(this);
 
 					$this.on('click', function(event) {
 
-						// Prevent default.
-							event.preventDefault();
-
-						// Toggle.
-							$menu_openers.not($this).removeClass('active');
-							$this.toggleClass('active');
-
-						// Trigger resize (sidebar lock).
-							$window.triggerHandler('resize.sidebar-lock');
+						$menu_items.css('color', '#9fa3a6');
+						$this.css('color', '#f56a6a');
 
 					});
 
+				});
+				
+			// Openers.
+				$menu_openers.each(function() {
+					
+					var $this = $(this);
+					
+					$this.on('click', function(event) {
+						
+						// Prevent default.
+						event.preventDefault();
+						
+						// Toggle.
+						$menu_openers.not($this).removeClass('active');
+						$('#menu a, #menu span').css('color', '#9fa3a6');
+						$this.toggleClass('active');
+						$this.css('color', '#f56a6a');
+						
+						// Trigger resize (sidebar lock).
+						$window.triggerHandler('resize.sidebar-lock');
+						
+					});
+					
+				});
+				
+			// Sub Openers.
+				$menu_sub_openers.each(function() {
+					
+					var $this = $(this);
+					
+					$this.on('click', function(event) {
+						
+						// Prevent default.
+						event.preventDefault();
+						
+						// Toggle.
+						$menu_sub_openers.not($this).removeClass('active');
+						$('#menu a, #menu span').css('color', '#9fa3a6');
+						$this.toggleClass('active');
+						$this.css('color', '#f56a6a');
+						
+						// Trigger resize (sidebar lock).
+						$window.triggerHandler('resize.sidebar-lock');
+						
+					});
+					
 				});
 
 	});

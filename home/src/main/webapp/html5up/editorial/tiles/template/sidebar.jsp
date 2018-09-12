@@ -43,9 +43,9 @@
 						<li><a href="/users">User</a></li>
 						<li><a href="/menus">Menu</a></li>
 						<li><a href="/common-codes">Common Code</a></li>
-						<li><span>zTree</span>
+						<li><span class="sub-opener">zTree</span>
 							<ul>
-								<li><a href="/zTree_v3/demo/en/index.html" target="_blank">Deom</a></li>
+								<li><a href="/zTree_v3/demo/en/index.html" target="_blank">Demo</a></li>
 								<li><a href="/zTree_v3/api/API_en.html" target="_blank">API</a></li>
 							</ul>
 						</li>
