@@ -4,38 +4,32 @@
 <script src="${pageContext.request.contextPath}/js/home.js"></script>
 
 <!-- Elements -->
-<h2 id="elements">ABOUT</h2>
+<h2 id="elements">Think about website</h2>
 
 <div class="row">
 	<div class="6u 12u$(small)">
-		<h3>We wait for spring rain</h3>
+		<h3>Simple is the best</h3>
 		<p>
 			<span class="image right">
-				<img src="${pageContext.request.contextPath}/images/home/seed.jpg" alt="" />
+				<img src="${pageContext.request.contextPath}/images/home/speed.png" alt="" />
 			</span>
-			<strong>우리는 봄비를 기다립니다.</strong><br>
-			단단하고 울통한 진갈색 껍질의 씨앗은 어디서 왔을까요?<br>
-			바람에  흩날렸을지, 빗물에 휩쓸렸을지, 야생동물의 털에 옮겨졌을지, 새의 소화기관을 거쳐 배설되었을지 아니면 이런 복수의 과정들을
-			거쳐 그곳에 안착했을지 여럿 상상을 해봅니다.<br>그렇게 기약없는 휴먼기간을 거쳐 싹을 틔울 조건이 갖추어졌을
-			때,<br>씨앗은 껍질을 깨고 발아합니다.<br> <a href="/main">w4springrain.me</a>
-			또한 그런 과정을 거쳐 싹을 틔웠습니다.<br>삶의 경험을 비춰 보면 출발점 대부분은 최적의 조건이 아니였던 것
-			같습니다. 싹을 틔운 순간 변화시킬 수 없을 것 같은 이 외부요인에 순응이 아닌 적응을 해나가고자 합니다. 연약하지 않은
-			우리는 그렇게 <strong>봄비를 기다립니다.
-			</strong>
+			<strong>고객의 시간은 소중합니다.</strong><br>
+			고객이 원하는 정보를 찾기 위해 시간을 허비하지 않도록 배려하여야 합니다.<br>
+			그러기 위해 정보의 전달은 <strong>직관적이고 간결해야 하며</strong> 고객이 site를 이용하기 위한 학습과 불편을 최소화 하여야 합니다.<br>
+			이는 저희가 생각하는 <strong>website</strong>의 최우선 원칙이며<br>
+			기술력과 디자인은 이를 뒤받침하기 위한 유용한 도구이자 수단입니다.<br>
 		</p>
 	</div>
 	<div class="6u$ 12u$(small)">
-		<h3>Value of technology</h3>
+		<h3>It works well</h3>
 		<p>
 			<span class="image right"><img
-				src="${pageContext.request.contextPath}/images/home/watch.jpg" alt="" /></span><strong>무브먼트(movement)</strong>는
-			시계에서 가장 핵심적인 부품으로 동력의 역할을 합니다.<br> 수정의 고유진동수로 시간을 재는 방식의 <strong>쿼츠(quartz)</strong>는
-			손목운동에 의한 회전추의 진동으로 태엽을 감는 방식의 <strong>오토매틱(automatic)</strong>보다 구조가
-			단순해 가벼우며 시간의 오차가 적습니다. 시계 본연의 기능적인 면에서 <strong>쿼츠(quartz)</strong>가 더
-			각광을 받을 것 같지만 <strong>오토매틱(automatic)</strong>에 더 큰 가치를 부여하는 이들이 많습니다.
-			우리는 무엇이 더 괜찮은 물건이라고 주장하고 싶지 않습니다. 물건의 가치란 개인의 취향이며 주관적인 판단에 맡겨야할
-			문제입니다.<br>결국 훌륭한 제품의 여부는 사용자의 만족도에 따라 결정되어진다고 생각합니다. 그리고 제품을
-			생산하는 사람은 제품이 아닌 제품의 사용자가 목표가 되어야 하며 거기에 초점을 맞춰 집중해야 한다고 생각합니다.
+				src="${pageContext.request.contextPath}/images/home/workwell.png" alt="" />
+			</span>
+			<strong>잘 동작하여야 합니다.</strong><br>
+			고객이 기대하고 예상한 결과를 <strong>정확하고 빠르게</strong> 전달되어야 합니다.<br>
+			기능에 대한 신뢰는 위의 정확성과 속도가 얼마나 <strong>지속적이고 안정적이게 유지</strong>되느냐에 달려있습니다.<br>
+			그리고 동작이 실패하였을 경우에는 고객이 납득할 수 있는 <strong>실패 사유와 해결책</strong>을 제시하여야 합니다.
 		</p>
 	</div>
 	<c:if test="${not empty logFail}">

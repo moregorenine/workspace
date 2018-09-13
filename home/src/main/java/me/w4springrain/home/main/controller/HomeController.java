@@ -21,6 +21,7 @@ import me.w4springrain.home.user.domain.User;
  */
 @Controller
 //@SessionAttributes("user")
+@SessionAttributes("user")
 @RequestMapping(value = "/home")
 public class HomeController {
 	

@@ -32,7 +32,7 @@ public class CommonCodeController {
 	public String selectCommonCodes(Locale locale, Model model) {
 		List<CommonCode> commonCodes = commonCodeService.selectCommonCodes();
 		model.addAttribute("commonCodes", commonCodes);
-		return "common/common-codes";
+		return "tiles:common/common-codes";
 	}
 	
 //	@RequestMapping(value = "/{userId}", method = RequestMethod.GET)

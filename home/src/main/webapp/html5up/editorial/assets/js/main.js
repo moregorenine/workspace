@@ -268,7 +268,7 @@
 
 					$this.on('click', function(event) {
 
-						$menu_items.css('color', '#9fa3a6');
+						$menu_items.css('color', '#7f888f');
 						$this.css('color', '#f56a6a');
 
 					});
@@ -287,9 +287,7 @@
 						
 						// Toggle.
 						$menu_openers.not($this).removeClass('active');
-						$('#menu a, #menu span').css('color', '#9fa3a6');
 						$this.toggleClass('active');
-						$this.css('color', '#f56a6a');
 						
 						// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
@@ -310,9 +308,7 @@
 						
 						// Toggle.
 						$menu_sub_openers.not($this).removeClass('active');
-						$('#menu a, #menu span').css('color', '#9fa3a6');
 						$this.toggleClass('active');
-						$this.css('color', '#f56a6a');
 						
 						// Trigger resize (sidebar lock).
 						$window.triggerHandler('resize.sidebar-lock');
