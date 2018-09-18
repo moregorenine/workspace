@@ -7,10 +7,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class ZTree {
 	String id;
 	String pId;
+	String tId;
+	String parentTId;
 	@NotEmpty
 	String name;
-	boolean	open;
-	boolean	isParent;
+	String open;
+	String isParent;
 	List<ZTree> children;
 	
 	public String getId() {
@@ -25,22 +27,34 @@ public class ZTree {
 	public void setpId(String pId) {
 		this.pId = pId;
 	}
+	public String gettId() {
+		return tId;
+	}
+	public void settId(String tId) {
+		this.tId = tId;
+	}
+	public String getParentTId() {
+		return parentTId;
+	}
+	public void setParentTId(String parentTId) {
+		this.parentTId = parentTId;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public boolean isOpen() {
+	public String getOpen() {
 		return open;
 	}
-	public void setOpen(boolean open) {
+	public void setOpen(String open) {
 		this.open = open;
 	}
-	public boolean isParent() {
+	public String getIsParent() {
 		return isParent;
 	}
-	public void setParent(boolean isParent) {
+	public void setIsParent(String isParent) {
 		this.isParent = isParent;
 	}
 	public List<ZTree> getChildren() {

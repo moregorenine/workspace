@@ -20,7 +20,6 @@ import me.w4springrain.home.menu.damain.ZTreeWrapper;
 import me.w4springrain.home.menu.service.MenuService;
 
 @Controller
-@RequestMapping(value = "/menus")
 public class MenuController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MenuController.class);
@@ -28,12 +27,15 @@ public class MenuController {
 	@Autowired
 	MenuService menuService;
 
-	@RequestMapping(value = "", method = RequestMethod.POST)
+	@RequestMapping(value = "/menus", method = RequestMethod.POST)
 	@ResponseBody
 	public ZTreeWrapper createMenu(@RequestBody @Valid ZTreeWrapper zTreeWrapper, BindingResult bindingResult, Model model) {
 		zTreeWrapper.checkErrors(bindingResult);
+		int resultCnt = 0;
 		if(zTreeWrapper.getErrors().isEmpty()) {
 			logger.debug("@Valid Check 오류 없을 경우 저장 실행");
+			resultCnt = menuService.createMenu(zTreeWrapper);
+			logger.debug("insert menu total count : " + resultCnt);
 		}
 		return zTreeWrapper;
 	}

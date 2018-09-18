@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import me.w4springrain.home.menu.damain.Menu;
 import me.w4springrain.home.menu.damain.ZTree;
+import me.w4springrain.home.menu.damain.ZTreeWrapper;
 import me.w4springrain.home.menu.dao.MenuDao;
 import me.w4springrain.home.menu.service.MenuService;
 
@@ -22,18 +23,20 @@ public class MenuServiceImpl implements MenuService {
 	MenuDao menuDao;
 	
 	@Override
-	public int createMenu(List<ZTree> zTrees) {
-		int resultCnt = 0;
-		for(ZTree zTree : zTrees) {
-			logger.debug("zTree : ", zTree);
-			//resultCnt += menuDao.createMenu(zTree);
-		}
-		return resultCnt;
-	}
-	
-	@Override
 	public List<Menu> selectMenus() {
 		return menuDao.selectUsers();
+	}
+
+	@Override
+	public int createMenu(ZTreeWrapper zTreeWrapper) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteMenu() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
