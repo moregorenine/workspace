@@ -2,9 +2,12 @@ package me.w4springrain.home.menu.damain;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class ZTree {
 	String id;
 	String pId;
+	@NotEmpty
 	String name;
 	boolean	open;
 	boolean	isParent;

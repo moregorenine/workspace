@@ -15,10 +15,24 @@ $(document).ready(function() {
 		params['url'] = "/menus";
 		params['requestType'] = "POST";
 		params['data'] = JSON.stringify(data);
-//		params['successCallbackFunction'] = callback1;
+		params['successCallbackFunction'] = menu.submitCB;
 		doAjax(params);
 	});
 });
+
+var menu = {
+	/**
+	 * 메뉴 등록 submit 버튼 Callback Function
+	 */
+	submitCB : function(data) {
+		//@Valid 검증 결과 error 존재할 경우
+		//해당 error Message alert!
+		//사용자가 setting한 successCallbackFunction은 미실행
+		if(data.errorMsg.length > 0) {
+			alert(data.errorMsg);
+		}
+	}
+}
 
 var setting = {
 		data: {
