@@ -31,16 +31,14 @@ public class MenuController {
 	@ResponseBody
 	public ZTreeWrapper createMenu(@RequestBody @Valid ZTreeWrapper zTreeWrapper, BindingResult bindingResult, Model model) {
 		zTreeWrapper.checkErrors(bindingResult);
-		int resultCnt = 0;
 		if(zTreeWrapper.getErrors().isEmpty()) {
 			logger.debug("@Valid Check 오류 없을 경우 저장 실행");
-			resultCnt = menuService.createMenu(zTreeWrapper);
-			logger.debug("insert menu total count : " + resultCnt);
+			menuService.createMenu(zTreeWrapper);
 		}
 		return zTreeWrapper;
 	}
 	
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/menus", method = RequestMethod.GET)
 	public String selectMenus(Model model) {
 		List<Menu> menus = menuService.selectMenus();
 		model.addAttribute("menus", menus);

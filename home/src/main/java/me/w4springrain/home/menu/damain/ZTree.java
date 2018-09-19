@@ -7,8 +7,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class ZTree {
 	String id;
 	String pId;
-	String tId;
-	String parentTId;
+	@NotEmpty
+	String tId; //Ztree 내장 id
+	String parentTId; //Ztree 내장 pId
+	int level;
 	@NotEmpty
 	String name;
 	String open;
@@ -38,6 +40,12 @@ public class ZTree {
 	}
 	public void setParentTId(String parentTId) {
 		this.parentTId = parentTId;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	public String getName() {
 		return name;

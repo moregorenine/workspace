@@ -15,10 +15,9 @@ public interface MenuService {
 
 	/**
 	 * Menu All Insert
-	 * @param zTreeWrapper 메뉴 정보
-	 * @return Insert total count
+	 * @param zTreeWrapper
 	 */
-	int createMenu(ZTreeWrapper zTreeWrapper);
+	void createMenu(ZTreeWrapper zTreeWrapper);
 
 	/**
 	 * Menu All Delete

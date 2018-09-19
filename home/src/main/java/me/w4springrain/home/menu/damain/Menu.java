@@ -1,21 +1,22 @@
 package me.w4springrain.home.menu.damain;
 
 import java.util.Date;
-import java.util.List;
 
 import me.w4springrain.home.common.domain.CommonVO;
 
 public class Menu extends CommonVO {
-	String menuId;
-	String menuNm;
+	String menuId; //no : 글번호(Primary Key)
+	String menuNm; //title : 글제목
+	int grp; //	grp : 같은 주제를 갖는 게시물의 고유번호. 부모글과 부모글로부터 파생된 모든 자식글은 같은 번호를 갖는다.
+	int seq; //seq : 같은 그룹내 게시물의 순서
+	int level; //lvl : 같은 그룹내 계층
 	String parent;
 	String url;
-	int seq;
+	String useYn;
 	String regUser;
 	Date regDt;
 	String uptUser;
 	Date uptDt;
-	List<ZTree> zTrees;
 	
 	public String getMenuId() {
 		return menuId;
@@ -29,6 +30,24 @@ public class Menu extends CommonVO {
 	public void setMenuNm(String menuNm) {
 		this.menuNm = menuNm;
 	}
+	public int getGrp() {
+		return grp;
+	}
+	public void setGrp(int grp) {
+		this.grp = grp;
+	}
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
 	public String getParent() {
 		return parent;
 	}
@@ -41,11 +60,11 @@ public class Menu extends CommonVO {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public int getSeq() {
-		return seq;
+	public String getUseYn() {
+		return useYn;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setUseYn(String useYn) {
+		this.useYn = useYn;
 	}
 	public String getRegUser() {
 		return regUser;
@@ -70,11 +89,5 @@ public class Menu extends CommonVO {
 	}
 	public void setUptDt(Date uptDt) {
 		this.uptDt = uptDt;
-	}
-	public List<ZTree> getzTrees() {
-		return zTrees;
-	}
-	public void setzTrees(List<ZTree> zTrees) {
-		this.zTrees = zTrees;
 	}
 }

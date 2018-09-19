@@ -28,9 +28,24 @@ public class MenuServiceImpl implements MenuService {
 	}
 
 	@Override
-	public int createMenu(ZTreeWrapper zTreeWrapper) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void createMenu(ZTreeWrapper zTreeWrapper) {
+		logger.debug("###메뉴생성 재귀함수 호출###");
+		for(ZTree zTree : zTreeWrapper.getzTrees()) {
+			this.createMenuLoop(zTree);
+		}
+	}
+
+	private void createMenuLoop(ZTree zTree) {
+		logger.debug("###메뉴생성 재귀함수 실행###");
+		logger.debug("1.메뉴 생성 : "+zTree.getName());
+		logger.debug("2.메뉴의 자식 존재 여부 체크");
+		logger.debug("	2-Y.자식 메뉴생성 재귀함수 호출");
+		if(zTree.getChildren()!=null) {
+			for(ZTree childZTree : zTree.getChildren()) {
+				this.createMenuLoop(childZTree);
+			}
+		}
+		logger.debug("3.메뉴 생성완료 : "+zTree.getName());
 	}
 
 	@Override
@@ -38,5 +53,7 @@ public class MenuServiceImpl implements MenuService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	
 
 }
