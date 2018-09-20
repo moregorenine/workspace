@@ -44,5 +44,13 @@
   <select id="selectMenus" resultType="me.w4springrain.home.menu.damain.Menu">
     SELECT * FROM W4_MENU;
   </select>
+  
+  <select id="selectCurrvalSeq" parameterType="String" resultType="int">
+    SELECT CURRVAL(#{seqNm});
+  </select>
+  
+  <select id="selectNextvalSeq" parameterType="String" resultType="int">
+    SELECT NEXTVAL(#{seqNm});
+  </select>
 
 </mapper>

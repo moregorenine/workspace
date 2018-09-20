@@ -23,4 +23,12 @@ public class MenuDao {
 		List<Menu> menus = sqlSession.selectList("menus.selectMenus");
 		return menus;
 	}
+
+	public int selectCurrvalSeq(String seqNm) {
+		return sqlSession.selectOne("menus.selectCurrvalSeq", seqNm);
+	}
+
+	public int selectNextvalSeq(String seqNm) {
+		return sqlSession.selectOne("menus.selectNextvalSeq", seqNm);
+	}
 }

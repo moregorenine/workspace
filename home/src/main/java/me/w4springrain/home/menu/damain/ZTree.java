@@ -5,12 +5,14 @@ import java.util.List;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class ZTree {
-	String id;
-	String pId;
+	String id; //본인 id
+	String pId; //부모 id
 	@NotEmpty
 	String tId; //Ztree 내장 id
 	String parentTId; //Ztree 내장 pId
-	int level;
+	int grp; //	grp : 같은 주제를 갖는 게시물의 고유번호. 부모글과 부모글로부터 파생된 모든 자식글은 같은 번호를 갖는다.
+	int seq; //seq : 같은 그룹내 게시물의 순서
+	int level; //lvl : 같은 그룹내 계층
 	@NotEmpty
 	String name;
 	String open;
@@ -40,6 +42,18 @@ public class ZTree {
 	}
 	public void setParentTId(String parentTId) {
 		this.parentTId = parentTId;
+	}
+	public int getGrp() {
+		return grp;
+	}
+	public void setGrp(int grp) {
+		this.grp = grp;
+	}
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	public int getLevel() {
 		return level;

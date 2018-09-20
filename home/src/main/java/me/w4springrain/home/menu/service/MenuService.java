@@ -24,6 +24,13 @@ public interface MenuService {
 	 * @return delete total count
 	 */
 	int deleteMenu();
+	
+	/**
+	 * seqNm의 현재 시퀀스 정보 조회
+	 * @param seqNm : 시퀀스명
+	 * @return
+	 */
+	int selectCurrvalSeq(String seqNm);
 
 
 }
