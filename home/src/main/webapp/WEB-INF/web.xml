@@ -4,6 +4,22 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
+	<context-param>
+		<description>환결 설정</description> 
+		<param-name>spring.profiles.active</param-name>
+		<!-- <param-value>local</param-value> -->
+		<param-value>prod</param-value>
+		<!-- <param-value>dev</param-value> -->
+	</context-param>
+	
+	<context-param>
+		<description>DB Type 설정</description>
+		<param-name>spring.profiles.db</param-name>
+		<!-- <param-value>h2</param-value> -->
+		<param-value>mysql</param-value>
+		<!-- <param-value>mysql</param-value> -->
+	</context-param>
+	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

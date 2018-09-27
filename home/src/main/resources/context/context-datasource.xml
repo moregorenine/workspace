@@ -25,7 +25,9 @@
 	</bean>
 	
 	<jdbc:initialize-database data-source="dataSource">
+		<!-- mySql용 시퀀스 생성 -->
+		<!-- <jdbc:script location="classpath:sql/common/W4_SEQENCES-schema.sql" /> -->
 		<jdbc:script location="classpath:sql/user/W4_USER-schema.sql" />
-		<!-- <jdbc:script location="classpath:sql/user/W4_USER-data.sql" /> -->
+		<jdbc:script location="classpath:sql/menu/W4_MENU-schema.sql" />
 	</jdbc:initialize-database>
 </beans>

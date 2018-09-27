@@ -58,15 +58,15 @@ function doAjax(doAjax_params) {
 		success : function(data, textStatus, jqXHR) {
 			if (typeof successCallbackFunction === "function") {
 				
-				var errorMsg = "";
+				var errorValidMsg = "";
 				if(data.errors.length > 0) {
-					errorMsg += "error Message : " + data.errors[0].defaultMessage;
-					errorMsg += "\n\nerror Object : ";
+					errorValidMsg += "error Message : " + data.errors[0].defaultMessage;
+					errorValidMsg += "\n\nerror Object : ";
 					for ( var i in data.errors[0].codes) {
-						errorMsg += "\n" + data.errors[0].codes[i];
+						errorValidMsg += "\n" + data.errors[0].codes[i];
 					}
 				}
-				data.errorMsg = errorMsg;
+				data.errorValidMsg = errorValidMsg;
 				
 				successCallbackFunction(data);
 			}

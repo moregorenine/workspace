@@ -168,6 +168,12 @@
 			<version>1.4.196</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
+		<!-- maria db -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.1.2</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

@@ -18,31 +18,43 @@
 <mapper namespace="menus">
 
   <insert id="createMenu" parameterType="me.w4springrain.home.menu.damain.Menu">
-	INSERT INTO W4_USER
-            (MENU_ID
-             , MENU_NM
-             , PARENT
-             , URL
-             , SEQ
-             , USE_YN
-             , REG_USER
-             , REG_DT
-             , UPT_USER
-             , UPT_DT)
-     VALUES ( #{menuId}
-             , #{menuNm}
-             , #{parent}
-             , #{url}
-             , #{seq}
-             , #{useYn}
-             , #{regUser}
-             , #{regDt}
-             , #{uptUser}
-             , #{uptDt} ); 
+	INSERT INTO W4_MENU
+	            (MENU_ID
+	             , MENU_NM
+	             , GRP
+	             , SEQ
+	             , LEVEL
+	             , PARENT
+	             , URL
+	             , USE_YN
+	             , REG_USER
+	             , REG_DT
+	             , UPT_USER
+	             , UPT_DT)
+	VALUES      (#{menuId}
+	             , #{menuNm}
+	             , #{grp}
+	             , #{seq}
+	             , #{level}
+	             , #{parent}
+	             , #{url}
+	             , 'N'
+	             , 'system'
+	             , CURRENT_TIMESTAMP()
+	             , 'system'
+	             , CURRENT_TIMESTAMP()); 
   </insert>
+  
+  <delete id="deleteMenu">
+	DELETE FROM W4_MENU;
+  </delete>
   
   <select id="selectMenus" resultType="me.w4springrain.home.menu.damain.Menu">
     SELECT * FROM W4_MENU;
+  </select>
+  
+  <select id="selectMenus2ZTree" resultType="me.w4springrain.home.menu.damain.ZTree">
+    SELECT A.*, A.MENU_ID AS ID, A.PARENT AS P_ID, A.MENU_NM AS NAME FROM W4_MENU A;
   </select>
   
   <select id="selectCurrvalSeq" parameterType="String" resultType="int">

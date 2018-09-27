@@ -1,9 +1,14 @@
-var zTree, rMenu;
+var addCount = 1;
+var rMenu;
+var zTree; 
 
 $(document).ready(function() {
 	$.fn.zTree.init($("#zTree"), setting, zNodes);
 	zTree = $.fn.zTree.getZTreeObj("zTree");
+	//우클릭 Event
 	rMenu = $("#rMenu");
+	//Drag Event
+	setCheck();
 	
 	/*버튼 Event 정의*/
 	$("#formMenus").submit(function( event ) {
@@ -28,13 +33,20 @@ var menu = {
 		//@Valid 검증 결과 error 존재할 경우
 		//해당 error Message alert!
 		//사용자가 setting한 successCallbackFunction은 미실행
-		if(data.errorMsg.length > 0) {
-			alert(data.errorMsg);
+		if(data.errorValidMsg.length > 0) {
+			alert(data.errorValidMsg);
+		} else {
+			location.replace("/menus");
 		}
 	}
 }
 
 var setting = {
+		edit: {
+			enable: true,
+			showRemoveBtn: false,
+			showRenameBtn: false
+		},
 		data: {
 			simpleData: {
 				enable: true
@@ -44,12 +56,14 @@ var setting = {
 			dblClickExpand: false
 		},
 		callback: {
-			onRightClick: OnRightClick
+			onRightClick: onRightClick,
+			beforeDrag: beforeDrag,
+			beforeDrop: beforeDrop
 		}
 	};
 
-var zNodes =[
-	/*{ id:1, pId:0, name:"pNode 1", open:true},
+/*var zNodes =[
+	{ id:1, pId:0, name:"pNode 1", open:true},
 	{ id:11, pId:1, name:"pNode 11"},
 	{ id:111, pId:11, name:"leaf node 111"},
 	{ id:112, pId:11, name:"leaf node 112"},
@@ -77,32 +91,29 @@ var zNodes =[
 	{ id:232, pId:23, name:"leaf node 232"},
 	{ id:233, pId:23, name:"leaf node 233"},
 	{ id:234, pId:23, name:"leaf node 234"},
-	{ id:3, pId:0, name:"pNode 3 - no child", isParent:true}*/
-];
+	{ id:3, pId:0, name:"pNode 3 - no child", isParent:true}
+];*/
 
-function OnRightClick(event, treeId, treeNode) {
-	if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
-		zTree.cancelSelectedNode();
-		showRMenu("root", event.clientX, event.clientY);
-	} else if (treeNode && !treeNode.noR) {
-		zTree.selectNode(treeNode);
-		showRMenu("node", event.clientX, event.clientY);
+function addTreeNode() {
+	hideRMenu();
+	var newNode = { name:"newNode " + (addCount++)};
+	if (zTree.getSelectedNodes()[0]) {
+		zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
+	} else {
+		zTree.addNodes(null, newNode);
 	}
 }
 
-function showRMenu(type, x, y) {
-	$("#rMenu ul").show();
-	if (type=="root") {
-		$("#m_del").hide();
-	} else {
-		$("#m_del").show();
+function beforeDrag(treeId, treeNodes) {
+	for (var i=0,l=treeNodes.length; i<l; i++) {
+		if (treeNodes[i].drag === false) {
+			return false;
+		}
 	}
-
-    y += document.body.scrollTop;
-    x += document.body.scrollLeft;
-    rMenu.css({"top":y+"px", "left":x+"px", "visibility":"visible"});
-
-	$("body").bind("mousedown", onBodyMouseDown);
+	return true;
+}
+function beforeDrop(treeId, treeNodes, targetNode, moveType) {
+	return targetNode ? targetNode.drop !== false : true;
 }
 
 function hideRMenu() {
@@ -116,16 +127,13 @@ function onBodyMouseDown(event){
 	}
 }
 
-var addCount = 1;
-
-function addTreeNode() {
-	hideRMenu();
-	var newNode = { name:"newNode " + (addCount++)};
-	if (zTree.getSelectedNodes()[0]) {
-//		newNode.checked = zTree.getSelectedNodes()[0].checked;
-		zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
-	} else {
-		zTree.addNodes(null, newNode);
+function onRightClick(event, treeId, treeNode) {
+	if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+		zTree.cancelSelectedNode();
+		showRMenu("root", event.clientX, event.clientY);
+	} else if (treeNode && !treeNode.noR) {
+		zTree.selectNode(treeNode);
+		showRMenu("node", event.clientX, event.clientY);
 	}
 }
 
@@ -147,4 +155,27 @@ function removeTreeNode() {
 function resetTree() {
 	hideRMenu();
 	$.fn.zTree.init($("#zTree"), setting, zNodes);
+}
+
+function setCheck() {
+	zTree.setting.edit.drag.isCopy = true;
+	zTree.setting.edit.drag.isMove = true;
+	zTree.setting.edit.drag.prev = true;
+	zTree.setting.edit.drag.inner = true;
+	zTree.setting.edit.drag.next = true;
+}
+
+function showRMenu(type, x, y) {
+	$("#rMenu ul").show();
+	if (type=="root") {
+		$("#m_del").hide();
+	} else {
+		$("#m_del").show();
+	}
+
+    y += document.body.scrollTop;
+    x += document.body.scrollLeft;
+    rMenu.css({"top":y+"px", "left":x+"px", "visibility":"visible"});
+
+	$("body").bind("mousedown", onBodyMouseDown);
 }

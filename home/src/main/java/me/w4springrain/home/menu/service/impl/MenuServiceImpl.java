@@ -6,8 +6,12 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import me.w4springrain.home.common.domain.CommonSequenceVO;
+import me.w4springrain.home.common.service.CommonSequenceService;
 import me.w4springrain.home.common.util.CommonUtil;
 import me.w4springrain.home.menu.damain.Menu;
 import me.w4springrain.home.menu.damain.ZTree;
@@ -23,13 +27,25 @@ public class MenuServiceImpl implements MenuService {
 	@Resource
 	MenuDao menuDao;
 	
+	@Autowired
+	CommonSequenceService commonSequenceService;
+	
 	@Override
-	public List<Menu> selectMenus() {
-		return menuDao.selectUsers();
+	public int createMenu(Menu menu) {
+		return menuDao.createMenu(menu);
+		
 	}
 
 	@Override
+	@Transactional
 	public void createMenu(ZTreeWrapper zTreeWrapper) {
+		logger.debug("###메뉴생성 all delete###");
+		this.deleteMenu();
+		logger.debug("###메뉴생성 시퀀스 초기화###");
+		CommonSequenceVO commonSequenceVO = new CommonSequenceVO();
+		commonSequenceVO.setSeqNm("W4_MENU_SEQ");
+		commonSequenceVO.setSeqCurrval(0);
+		commonSequenceService.restartSeq(commonSequenceVO);
 		logger.debug("###메뉴생성 재귀함수 호출###");
 		for(ZTree zTree : zTreeWrapper.getzTrees()) {
 			this.createMenuLoop(zTree);
@@ -61,12 +77,15 @@ public class MenuServiceImpl implements MenuService {
 //			lvl : 같은 그룹내 계층
 			int level = zTree.getLevel();
 //			부모 menuId
-			String parent = "";
+			String parent = null;
 			
 			logger.debug("	1-1.최상위 메뉴 체크");
 			if(zTree.getLevel()==0) {
 				logger.debug("	1-1-Y.grp값 nextval sequence 가져오기");
-				grp = this.selectNextvalSeq("W4_MENU_SEQ");
+				//grp = this.selectNextvalSeq("W4_MENU_SEQ");
+				CommonSequenceVO commonSequenceVO = new CommonSequenceVO();
+				commonSequenceVO.setSeqNm("W4_MENU_SEQ");
+				grp = commonSequenceService.selectNextvalSeq(commonSequenceVO);
 				logger.debug("	1-1-Y.seq값 set value 1");
 				seq = 1;
 				logger.debug("	1-1-Y.parent값 null : default");
@@ -90,7 +109,8 @@ public class MenuServiceImpl implements MenuService {
 			createMenu.setLevel(level);
 			createMenu.setParent(parent);
 			
-			logger.debug("생성될 menu 테이블 정보 : " + createMenu);
+			logger.debug("menu 테이블 생성 : " + createMenu);
+			this.createMenu(createMenu);
 			
 //			TODO
 //			메뉴에 연결할 url
@@ -122,22 +142,17 @@ public class MenuServiceImpl implements MenuService {
 
 	@Override
 	public int deleteMenu() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int selectCurrvalSeq(String seqNm) {
-		return menuDao.selectCurrvalSeq(seqNm);
+		return menuDao.deleteMenu();
 	}
 	
-	/**
-	 * seqNm의 시퀀스 증가
-	 * @param seqNm : 시퀀스명
-	 * @return
-	 */
-	private int selectNextvalSeq(String seqNm) {
-		return menuDao.selectNextvalSeq(seqNm);
+	@Override
+	public List<Menu> selectMenus() {
+		return menuDao.selectUsers();
+	}
+	
+	@Override
+	public List<ZTree> selectMenus2ZTree() {
+		return menuDao.selectMenus2ZTree();
 	}
 
 }
