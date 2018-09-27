@@ -13,24 +13,24 @@
 <mapper namespace="seq">
 
 	<update id="increaseSeq" parameterType="me.w4springrain.home.common.domain.CommonSequenceVO">
-		UPDATE w4_sequences
+		UPDATE W4_SEQUENCES
 		SET
-		seq_currval = seq_currval+1
-		WHERE seq_nm = #{seqNm}
+		SEQ_CURRVAL = SEQ_CURRVAL+1
+		WHERE SEQ_NM = #{seqNm}
 	</update>
 
 	<update id="restartSeq" parameterType="me.w4springrain.home.common.domain.CommonSequenceVO">
-		UPDATE w4_sequences
+		UPDATE W4_SEQUENCES
 		SET
-		seq_currval = #{seqCurrval}
-		WHERE seq_nm = #{seqNm}
+		SEQ_CURRVAL = #{seqCurrval}
+		WHERE SEQ_NM = #{seqNm}
 	</update>
 
 	<select id="selectCurrvalSeq" parameterType="me.w4springrain.home.common.domain.CommonSequenceVO"
 		resultType="int">
-		SELECT seq_currval
-		FROM w4_sequences
-		WHERE seq_nm = #{seqNm}
+		SELECT SEQ_CURRVAL
+		FROM W4_SEQUENCES
+		WHERE SEQ_NM = #{seqNm}
 	</select>
 
 </mapper>
