@@ -35,9 +35,22 @@ public class MenuServiceImpl implements MenuService {
 		return menuDao.createMenu(menu);
 		
 	}
+	
+	/**
+	 * 같은 그룹내 게시물의 순서
+	 */
+	private int seq = 0;
+	
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
 
 	@Override
-	@Transactional
+	@Transactional(rollbackFor=Exception.class)
 	public void createMenu(ZTreeWrapper zTreeWrapper) {
 		logger.debug("###메뉴생성 all delete###");
 		this.deleteMenu();
@@ -47,7 +60,10 @@ public class MenuServiceImpl implements MenuService {
 		commonSequenceVO.setSeqCurrval(0);
 		commonSequenceService.restartSeq(commonSequenceVO);
 		logger.debug("###메뉴생성 재귀함수 호출###");
+//		seq : 같은 그룹내 게시물의 순서
+//		그룹 시작시 초기화
 		for(ZTree zTree : zTreeWrapper.getzTrees()) {
+			this.setSeq(0);
 			this.createMenuLoop(zTree);
 		}
 	}
@@ -73,7 +89,6 @@ public class MenuServiceImpl implements MenuService {
 //			grp : 같은 주제를 갖는 게시물의 고유번호. 부모글과 부모글로부터 파생된 모든 자식글은 같은 번호를 갖는다.
 			int grp = 0;
 //			seq : 같은 그룹내 게시물의 순서
-			int seq = 0;
 //			lvl : 같은 그룹내 계층
 			int level = zTree.getLevel();
 //			부모 menuId
@@ -86,16 +101,11 @@ public class MenuServiceImpl implements MenuService {
 				CommonSequenceVO commonSequenceVO = new CommonSequenceVO();
 				commonSequenceVO.setSeqNm("W4_MENU_SEQ");
 				grp = commonSequenceService.selectNextvalSeq(commonSequenceVO);
-				logger.debug("	1-1-Y.seq값 set value 1");
-				seq = 1;
 				logger.debug("	1-1-Y.parent값 null : default");
 			} else {
 				logger.debug("	1-1-N.grp값 부모와 동일한 grp값 : from 부모에서 set해준다.");
 //				부모가 set해준 값 그대로 가져다 사용
 				grp = zTree.getGrp();
-				logger.debug("	1-1-N.seq값 부모 seq+1 : from 부모에서 set해준다.");
-//				부모가 set해준 값 그대로 가져다 사용
-				seq = zTree.getSeq();
 				logger.debug("	1-1-N.parent값 부모의 menuId : from 부모에서 set해준다.");
 //				부모가 set해준 값 그대로 가져다 사용
 				parent = zTree.getpId();
@@ -105,7 +115,8 @@ public class MenuServiceImpl implements MenuService {
 			createMenu.setMenuId(menuId);
 			createMenu.setMenuNm(menuNm);
 			createMenu.setGrp(grp);
-			createMenu.setSeq(seq);
+			this.setSeq(this.getSeq()+1);
+			createMenu.setSeq(this.getSeq());
 			createMenu.setLevel(level);
 			createMenu.setParent(parent);
 			
@@ -128,8 +139,6 @@ public class MenuServiceImpl implements MenuService {
 				for(ZTree childZTree : zTree.getChildren()) {
 					logger.debug("	1-1-N.grp값 부모와 동일한 grp값 : from 부모에서 set해준다.");
 					childZTree.setGrp(grp);
-					logger.debug("	1-1-N.seq값 부모 seq+1 : from 부모에서 set해준다.");
-					childZTree.setSeq(seq+1);
 					logger.debug("	1-1-N.parent값 부모의 menuId : from 부모에서 set해준다.");
 					childZTree.setpId(menuId);
 					this.createMenuLoop(childZTree);

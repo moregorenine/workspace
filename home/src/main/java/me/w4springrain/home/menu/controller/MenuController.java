@@ -54,6 +54,16 @@ public class MenuController {
 	 */
 	@RequestMapping(value = "/menus", method = RequestMethod.GET)
 	public String selectMenus(Model model) {
+		return "tiles:menus/menus";
+	}
+	
+	/**
+	 * Menu 객체 정보를 zTree UI 정보로  변환하여 json data로 전송
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/menusZtree", method = RequestMethod.GET)
+	public String selectMenusZtree(Model model) {
 		List<ZTree> zTrees = menuService.selectMenus2ZTree();
 		
 		ObjectMapper mapper = new ObjectMapper();
@@ -64,7 +74,7 @@ public class MenuController {
 			e.printStackTrace();
 		}
 		model.addAttribute("jsZTrees", jsZTrees);
-		return "tiles:menus/menus";
+		return "menus/menusZtree";
 	}
 	
 }

@@ -12,6 +12,9 @@
 	<security:http pattern="/zTree_v3/**" security="none"></security:http>
 	
 	<security:http>
+		<security:headers>
+			<security:frame-options disabled="true"></security:frame-options>
+		</security:headers>
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/index.jsp" access="permitAll" />
 		<security:intercept-url pattern="/home*" access="permitAll" />

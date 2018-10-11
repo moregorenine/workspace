@@ -54,7 +54,9 @@
   </select>
   
   <select id="selectMenus2ZTree" resultType="me.w4springrain.home.menu.damain.ZTree">
-    SELECT A.*, A.MENU_ID AS ID, A.PARENT AS P_ID, A.MENU_NM AS NAME FROM W4_MENU A;
+	SELECT A.*, A.MENU_ID AS ID, A.PARENT AS P_ID, A.MENU_NM AS NAME
+	FROM W4_MENU A
+	ORDER BY A.GRP, A.SEQ ASC;
   </select>
   
   <select id="selectCurrvalSeq" parameterType="String" resultType="int">
