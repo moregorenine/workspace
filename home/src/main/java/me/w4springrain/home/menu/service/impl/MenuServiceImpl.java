@@ -50,7 +50,7 @@ public class MenuServiceImpl implements MenuService {
 	}
 
 	@Override
-	@Transactional(rollbackFor=Exception.class)
+	@Transactional
 	public void createMenu(ZTreeWrapper zTreeWrapper) {
 		logger.debug("###메뉴생성 all delete###");
 		this.deleteMenu();
