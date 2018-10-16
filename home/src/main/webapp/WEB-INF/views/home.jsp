@@ -14,10 +14,8 @@
 				<img src="${pageContext.request.contextPath}/images/home/speed.png" alt="" />
 			</span>
 			<strong>고객의 시간은 소중합니다.</strong><br>
-			고객이 원하는 정보를 찾기 위해 시간을 허비하지 않도록 배려하여야 합니다.<br>
-			그러기 위해 정보의 전달은 <strong>직관적이고 간결해야 하며</strong> 고객이 site를 이용하기 위한 학습과 불편을 최소화 하여야 합니다.<br>
-			이는 저희가 생각하는 <strong>website</strong>의 최우선 원칙이며<br>
-			기술력과 디자인은 이를 뒤받침하기 위한 유용한 도구이자 수단입니다.<br>
+			고객이 원하는 정보를 찾기 위해 시간을 허비하지 않도록 배려하세요.<br>
+			그러기 위해 정보의 전달은 <strong>직관적이고 간결해야 하며</strong> 고객이 site를 이용하기 위한 학습을 최소화 합니다.<br>
 		</p>
 	</div>
 	<div class="6u$ 12u$(small)">
@@ -28,8 +26,7 @@
 			</span>
 			<strong>잘 동작하여야 합니다.</strong><br>
 			고객이 기대하고 예상한 결과를 <strong>정확하고 빠르게</strong> 전달되어야 합니다.<br>
-			기능에 대한 신뢰는 위의 정확성과 속도가 얼마나 <strong>지속적이고 안정적이게 유지</strong>되느냐에 달려있습니다.<br>
-			그리고 동작이 실패하였을 경우에는 고객이 납득할 수 있는 <strong>실패 사유와 해결책</strong>을 제시하여야 합니다.
+			기능에 대한 신뢰는 위의 정확성과 속도가 얼마나 <strong>지속적이고 안정적이게 유지</strong>되느냐에 달려있습니다.
 		</p>
 	</div>
 	<c:if test="${not empty logFail}">

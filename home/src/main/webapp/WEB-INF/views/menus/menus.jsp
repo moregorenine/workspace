@@ -9,7 +9,7 @@
 
 <div class="row">
 	<div class="4u 12u$(small) box">
-		<iframe src="menusZtree" name="menusZtree" width=100% height=500px></iframe>
+		<iframe src="menusZtree" name="menusZtree" width=100% height=400px></iframe>
 	</div>
 	<div class="8u$ 12u$(small)">
 		<form id="formMenus" method="post" action="menus">

@@ -42,7 +42,7 @@
 					<ul>
 						<li><a href="/users">User</a></li>
 						<li><a href="/menus">Menu</a></li>
-						<li><a href="/common-codes">Common Code</a></li>
+						<!-- <li><a href="/common-codes">Common Code</a></li> -->
 						<li><span class="sub-opener">zTree</span>
 							<ul>
 								<li><a href="/zTree_v3/demo/en/index.html" target="_blank">Demo</a></li>

@@ -2,13 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- -Dspring.profiles.active=local -->
-	<context:property-placeholder location="classpath:properties/config-${spring.profiles.active:local}.properties"/>
+	<!-- <context:property-placeholder location="classpath:properties/config-${spring.profiles.active:local}.properties"/> -->
+
+	<!-- Jasypt -->
+	<bean id="environmentVariablesConfiguration"
+		class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+		<property name="algorithm" value="PBEWITHMD5ANDDES" />
+		<property name="passwordEnvName" value="DB_KEY"/>
+	</bean>
+	
+	<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="environmentVariablesConfiguration" />
+	</bean>
+	
+	<bean id="propertyConfig"
+		class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+		<constructor-arg ref="configurationEncryptor" />
+		<property name="location" value="classpath:properties/config-${spring.profiles.active:local}.properties" />
+	</bean>
 	
 </beans>
