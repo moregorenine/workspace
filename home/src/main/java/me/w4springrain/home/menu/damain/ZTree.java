@@ -18,6 +18,8 @@ public class ZTree {
 	String open;
 	String isParent;
 	List<ZTree> children;
+	String url; //메뉴에 연결할 url
+	String useYn; //메뉴 사용여부
 	
 	public String getId() {
 		return id;
@@ -84,5 +86,17 @@ public class ZTree {
 	}
 	public void setChildren(List<ZTree> children) {
 		this.children = children;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getUseYn() {
+		return useYn;
+	}
+	public void setUseYn(String useYn) {
+		this.useYn = useYn;
 	}
 }

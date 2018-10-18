@@ -9,6 +9,12 @@ $(document).ready(function() {
 	rMenu = $("#rMenu");
 	//Drag Event
 	setCheck();
+	
+	//초기화 후 첫번째 노드 selected 상태로 변경
+	if (zTree.getNodes().length>0) {
+		zTree.selectNode(zTree.getNodes()[0]);
+		onClick(null, null, zTree.getNodes()[0]);
+	}
 });
 
 var setting = {
@@ -23,12 +29,15 @@ var setting = {
 			}
 		},
 		view: {
-			dblClickExpand: false
+			dblClickExpand: false,
+			selectedMulti: false
 		},
 		callback: {
+			onClick: onClick,
 			onRightClick: onRightClick,
+			onRename: onRename,
 			beforeDrag: beforeDrag,
-			beforeDrop: beforeDrop
+			beforeDrop: beforeDrop,
 		}
 	};
 
@@ -109,6 +118,29 @@ function onBodyMouseDown(event){
 	if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
 		rMenu.css({"visibility" : "hidden"});
 	}
+}
+
+/**
+ * 클릭 event 설정
+ * @param event
+ * @param treeId
+ * @param treeNode
+ * @returns
+ */
+function onClick(event, treeId, treeNode) {
+    if(treeNode.id !== undefined) {
+    	parent.$("#menuId").val(treeNode.id);
+    } else {
+    	parent.$("#menuId").val("");
+    	treeNode.useYn = "N"
+    }
+    parent.$("#menuNm").val(treeNode.name);
+    parent.$("#url").val(treeNode.url);
+    parent.$("#useYn").val(treeNode.useYn);
+};
+
+function onRename(event, treeId, treeNode, isCancel) {
+	parent.$("#menuNm").val(treeNode.name);
 }
 
 /**

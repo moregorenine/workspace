@@ -13,6 +13,21 @@ $(document).ready(function() {
 		params['successCallbackFunction'] = menu.submitCB;
 		doAjax(params);
 	});
+	
+	$("#menuNm").keyup(function() {
+		menusZtree.zTree.getSelectedNodes()[0].name = $("#menuNm").val();
+		menusZtree.zTree.updateNode(menusZtree.zTree.getSelectedNodes()[0]);
+	});
+	
+	$("#url").keyup(function() {
+		menusZtree.zTree.getSelectedNodes()[0].url = $("#url").val();
+		menusZtree.zTree.updateNode(menusZtree.zTree.getSelectedNodes()[0]);
+	});
+	
+	$("#useYn").change(function() {
+		menusZtree.zTree.getSelectedNodes()[0].useYn = $("#useYn").val();
+		menusZtree.zTree.updateNode(menusZtree.zTree.getSelectedNodes()[0]);
+	});
 });
 
 var menu = {

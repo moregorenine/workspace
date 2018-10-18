@@ -93,6 +93,10 @@ public class MenuServiceImpl implements MenuService {
 			int level = zTree.getLevel();
 //			부모 menuId
 			String parent = null;
+//			메뉴에 연결할 url
+			String url = zTree.getUrl();
+//			메뉴 사용여부
+			String useYn = zTree.getUseYn();
 			
 			logger.debug("	1-1.최상위 메뉴 체크");
 			if(zTree.getLevel()==0) {
@@ -119,15 +123,13 @@ public class MenuServiceImpl implements MenuService {
 			createMenu.setSeq(this.getSeq());
 			createMenu.setLevel(level);
 			createMenu.setParent(parent);
+			createMenu.setUrl(url);
+			createMenu.setUseYn(useYn);
 			
 			logger.debug("menu 테이블 생성 : " + createMenu);
 			this.createMenu(createMenu);
 			
 //			TODO
-//			메뉴에 연결할 url
-//			String url;
-//			메뉴 사용여부
-//			String useYn;
 //			String regUser;
 //			Date regDt;
 //			String uptUser;

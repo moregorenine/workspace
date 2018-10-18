@@ -38,7 +38,7 @@
 	             , #{level}
 	             , #{parent}
 	             , #{url}
-	             , 'N'
+	             , #{useYn}
 	             , 'system'
 	             , CURRENT_TIMESTAMP()
 	             , 'system'
