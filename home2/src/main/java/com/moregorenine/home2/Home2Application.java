@@ -1,4 +1,4 @@
-package com.github.moregorenine.home2;
+package com.moregorenine.home2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
