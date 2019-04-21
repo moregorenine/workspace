@@ -13,6 +13,6 @@ public class IndexController {
 	
 	@GetMapping("/demo")
 	public String showDemoPage() {
-		return "/demo";
+		return "demo";
 	}
 }
