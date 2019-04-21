@@ -20,12 +20,16 @@ $(document).ready(function() {
   const DIV_CARD = 'div.card';
 
   /** Initialize tooltips */
-  $('[data-toggle="tooltip"]').tooltip();
+  if($('[data-toggle="tooltip"]').length != 0){
+	  $('[data-toggle="tooltip"]').tooltip();
+  }
 
   /** Initialize popovers */
-  $('[data-toggle="popover"]').popover({
-    html: true
-  });
+  if($('[data-toggle="popover"]').length != 0){
+	  $('[data-toggle="popover"]').popover({
+		  html: true
+	  });
+  }
 
   /** Function for remove card */
   $('[data-toggle="card-remove"]').on('click', function(e) {

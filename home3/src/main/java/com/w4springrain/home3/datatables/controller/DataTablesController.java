@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DataTablesController {
 
-	@GetMapping("/datatables/example")
+	@GetMapping("/datatables")
 	public String dataTablesExample() {
-		return "views/datatables/example";
+		return "views/datatables/main";
 	}
 }
