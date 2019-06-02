@@ -1,6 +1,7 @@
 package com.w4springrain.home3.admin.comcode.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 //Create : 생성(POST)
 //Read : 조회(GET)
@@ -11,4 +12,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ComCodeController {
 
+	@GetMapping("/admin/comcodes")
+	public String readComcodes() {
+		return "views/admin/comcodes";
+	}
 }
